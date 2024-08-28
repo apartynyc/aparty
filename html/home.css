@@ -1,0 +1,182 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 65px;
+    margin: 0px;
+    font-weight: 120;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 9999;
+  }
+  
+.border {
+    background: linear-gradient(90deg, gray, 90%, black);
+    height: 2px;
+    width: 80vw;
+    margin-top: 4px;
+  }
+
+#heading {
+    position: fixed;
+    width: 100%;
+    padding-left: 40px;
+    padding-top: 20px;
+  }
+
+body {
+    background-color: white;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+footer {
+    position: fixed;
+    vertical-align: bottom;
+    bottom: 0;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+#nav1{
+    position: fixed;
+    padding-left: 550px;
+    padding-top: 40px;
+    z-index: 9999;
+  }
+
+#nav1 ul {
+    display: flex;
+}
+
+#nav1 ul li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+#nav1 ul li a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#nav2{
+    position: fixed;
+    width: 100%;
+    padding-left: 0px;
+    top: 0;
+    color: rgb(0, 0, 0);
+    font-size: 65px;
+    margin: 0px;
+    font-weight: 100;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 9999;
+  }
+
+#nav2 ul {
+    display: flex;
+}
+
+#nav2 ul li {
+    list-style: none;
+}
+
+#nav2 ul li a {
+    text-decoration: none;
+}
+
+
+
+nav [aria-label="home"] {
+
+    font-size: 20px;
+
+}
+
+#image {
+    top: 15%;
+    left: 27%;
+    position: fixed;
+    z-index: 0;
+}
+
+
+
+.marquee-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white; /* Optional: Set a background color */
+    z-index: 1000; /* Ensure it appears on top of other content */
+}
+
+.marquee {
+    display: flex;
+    overflow: hidden;
+    gap: 1rem; /* Adjust the gap as needed */
+    position: relative;
+    user-select: none;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 550;
+    text-transform: lowercase;
+    line-height: 1.2em !important;
+    font-size: 30px;
+    letter-spacing: 2px;
+    min-width: 100%;
+    gap: 1rem; /* Match the gap */
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - 1rem)); /* Match the gap */
+    }
+}
+
+.scroll {
+    animation: scroll 10s linear infinite;
+}
+/* xs */
+@media (min-width: 475px) {}
+
+/* sm */
+@media (min-width: 640px) {}
+
+/* md */
+@media (min-width: 768px) {}
+
+/* lg */
+@media (min-width: 1024px) {}
+
+/* xl */
+@media (min-width: 1280px) {}
+
+/* 2xl */
+@media (min-width: 1536px) {}
+
+/* 2xl */
+@media (max-width: 1536px) {}
+
+/* xl */
+@media (max-width: 1280px) {}
+
+/* lg */
+@media (max-width: 1024px) {}
+
+/* md */
+@media (max-width: 768px) {}
+
+/* sm */
+@media (max-width: 640px) {}
+
+/* xs */
+@media (max-width: 475px) {}

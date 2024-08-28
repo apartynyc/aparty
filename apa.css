@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+  flex: 0 1 auto; /* Prevents the image from growing too large */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  
+}
+
+img:hover {
+  transform: scale(1.5); /* Enlarges the image by 20% when hovered */
+  z-index: 1; /* Ensures the hovered image appears above others */
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-size: 65px;
+  margin: 0px;
+  font-weight: 100;
+  font-family: 'Times New Roman', Times, serif;
+  z-index: 9999;
+}
+
+h1 a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit color from h1 */
+}
+
+h1 a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+#heading {
+  position: fixed;
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 20px;
+}

@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#heading {
+  position: fixed;
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.border {
+  background: linear-gradient(90deg, gray, 90%, black);
+  height: 2px;
+  width: 80vw;
+  margin-top: 4px;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-size: 65px;
+  margin: 0px;
+  font-weight: 100;
+  font-family: 'Times New Roman', Times, serif;
+  z-index: 9999;
+}
+
+h1 a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit color from h1 */
+}
+
+h1 a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+#progress-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#progress {
+  font-size: 3em;
+  color: black;
+}
+
+
+iframe {
+  position: fixed ;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Removes the default iframe border */
+  z-index: -1;
+}
