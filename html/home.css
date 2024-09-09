@@ -3,9 +3,13 @@ h1 {
     font-size: 65px;
     margin: 0px;
     font-weight: 120;
-    font-family: 'Times New Roman', Times, serif;
     z-index: 9999;
   }
+  @font-face {
+    font-family: myFirstFont;
+    src: url(/AktivGrotesk.ttf);
+  }
+  
   
 .border {
     background: linear-gradient(90deg, gray, 90%, black);
