@@ -27,8 +27,8 @@
     #heading {
         position: fixed;
         width: 100%;
-        padding-left: 40px;
-        padding-top: 20px;
+        padding-left: 25px;
+        padding-top: 7.5px;
       }
     
     body {
@@ -50,7 +50,7 @@
     #nav1{
         position: fixed;
         padding-left: 175px;
-        padding-top: 32.5px;
+        padding-top: 20px;
         z-index: 9999;
       }
     
@@ -104,7 +104,7 @@
     }
     
     #image {
-        top: 25%;
+        top: 30%;
         left: 1.5%;
         position: fixed;
         z-index: 9999;
