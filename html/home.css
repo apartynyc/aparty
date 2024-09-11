@@ -1,7 +1,7 @@
 @media (min-width: 390px) {
     h1 {
         color: rgb(0, 0, 0);
-        font-size: 65px;
+        font-size: 50px;
         margin: 0px;
         font-weight: 120;
         z-index: 9999;
@@ -49,8 +49,8 @@
     
     #nav1{
         position: fixed;
-        padding-left: 225px;
-        padding-top: 40px;
+        padding-left: 175px;
+        padding-top: 32.5px;
         z-index: 9999;
       }
     
@@ -65,7 +65,7 @@
     
     #nav1 ul li a {
         text-decoration: none;
-        font-size: 15px;
+        font-size: 12.5px;
         color: black;
         
     }
@@ -104,12 +104,12 @@
     }
     
     #image {
-        top: 15%;
-        left: 3%;
+        top: 25%;
+        left: 1.5%;
         position: fixed;
         z-index: 9999;
         height: auto;
-        width: 450px;
+        width: 375px;
     }
     
     
@@ -125,7 +125,7 @@
     .marquee {
         display: flex;
         overflow: hidden;
-        gap: 1rem; /* Adjust the gap as needed */
+        gap: 0.5rem; /* Adjust the gap as needed */
         position: relative;
         user-select: none;
     }
@@ -139,10 +139,10 @@
         font-weight: 550;
         text-transform: lowercase;
         line-height: 1.2em !important;
-        font-size: 30px;
+        font-size: 20px;
         letter-spacing: 2px;
         min-width: 100%;
-        gap: 1rem; /* Match the gap */
+        gap: 0.5rem; /* Match the gap */
     }
     
     @keyframes scroll {
@@ -150,7 +150,7 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(calc(-100% - 1rem)); /* Match the gap */
+            transform: translateX(calc(-100% - 0.5rem)); /* Match the gap */
         }
     }
     
@@ -302,7 +302,7 @@
         text-transform: lowercase;
         line-height: 1.2em !important;
         font-size: 30px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         min-width: 100%;
         gap: 1rem; /* Match the gap */
     }
