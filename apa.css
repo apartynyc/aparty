@@ -1,7 +1,12 @@
 body {
   background-color: white;
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: myFirstFont;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(/AktivGroteskthin.ttf);
 }
 
 img {
@@ -34,7 +39,7 @@ h1 {
   font-size: 65px;
   margin: 0px;
   font-weight: 100;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: myFirstFont;
   z-index: 9999;
 }
 
