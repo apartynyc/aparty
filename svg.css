@@ -1,0 +1,16 @@
+#novaline{
+    background-color: blue;
+}
+svg{
+    background-color: blue;
+}
+
+.cls-2, .cls-6{
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+    transition: transform 0.3s ease;
+  }
+
+  .cls-2:hover, .cls-6:hover{
+    transform: scale(1.1);
+  }

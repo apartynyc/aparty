@@ -103,11 +103,20 @@
     
     }
     
-    #image {
+    /* #image {
         top: 25%;
         left: 1.5%;
         position: fixed;
-        z-index: 9999;
+        z-index: 10000;
+        height: auto;
+        width: 375px;
+    } */
+
+    #logo{
+        top: 25%;
+        left: 1.5%;
+        position: fixed;
+        z-index: 10000;
         height: auto;
         width: 375px;
     }
@@ -265,7 +274,16 @@
     
     }
     
-    #image {
+    /* #image {
+        top: 21%;
+        left: 3%;
+        position: fixed;
+        z-index: 9999;
+        height: auto;
+        width: 450px;
+    } */
+
+    #logo{
         top: 21%;
         left: 3%;
         position: fixed;
@@ -426,7 +444,16 @@
     
     }
     
-    #image {
+    /* #image {
+        top: 21%;
+        left: 2.5%;
+        position: fixed;
+        z-index: 9999;
+        height: auto;
+        width: 600px;
+    } */
+
+    #logo{
         top: 21%;
         left: 2.5%;
         position: fixed;
@@ -588,7 +615,16 @@
     
     }
     
-    #image {
+    /* #image {
+        top: 21%;
+        left: 11%;
+        position: fixed;
+        z-index: 9999;
+        height: auto;
+        width: 600px;
+    } */
+
+    #logo{
         top: 21%;
         left: 11%;
         position: fixed;
@@ -750,7 +786,16 @@
     
     }
     
-    #image {
+    /* #image {
+        top: 21%;
+        left: 20%;
+        position: fixed;
+        z-index: 9999;
+        height: auto;
+        width: 600px;
+    } */
+
+    #logo{
         top: 21%;
         left: 20%;
         position: fixed;
@@ -912,7 +957,16 @@ nav [aria-label="home"] {
 
 }
 
-#image {
+/* #image {
+    top: 21%;
+    left: 21%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 600px;
+} */
+
+#logo{
     top: 21%;
     left: 21%;
     position: fixed;
@@ -1074,7 +1128,16 @@ nav [aria-label="home"] {
 
 }
 
-#image {
+/* #image {
+    top: 21%;
+    left: 30%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 600px;
+} */
+
+#logo{
     top: 21%;
     left: 30%;
     position: fixed;
@@ -1237,7 +1300,16 @@ nav [aria-label="home"] {
 
 }
 
-#image {
+/* #image {
+    top: 21%;
+    left: 31%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 600px;
+} */
+
+#logo{
     top: 21%;
     left: 31%;
     position: fixed;
