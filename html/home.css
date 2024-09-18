@@ -64,7 +64,7 @@
     }
     
     #logo {
-        width: 100%;  /* or specific pixel size */
+        width: 50vw;
         height: auto;
         display: flex;
         align-items: center;
