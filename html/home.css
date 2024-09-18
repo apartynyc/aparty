@@ -1,120 +1,244 @@
-h1 {
-    color: rgb(0, 0, 0);
-    font-size: 65px;
-    margin: 0px;
-    font-weight: 120;
-    z-index: 9999;
-    font-family: myFirstFont;
-  }
-  *{
-    font-family: myFirstFont;
-  }
-
-  @font-face {
-    font-family: myFirstFont;
-    src: url(/AktivGroteskthin.ttf);
-  }
-  
-  
-
-
-
-
-body {
-    background-color: white;
-    margin: 0;
-    overflow: hidden;
-  }
-
-
-
-#top {
-    display: flex;
-    justify-content: space-between; /* Spreads items (logo and nav) apart */
-    align-items: center;
-    padding: 1rem 2rem;
-}
-
-#nav1 ul {
-    padding: 0;
-    display: flex; 
-}
-
-#nav1 ul li {
-    list-style: none;
-    margin-left: 25px;
-}
-
-#nav1 ul li a {
-    text-decoration: none;
-    font-size: 20px;
-    color: black;
+@media (min-width: 1px), (max-width: 554px) {
+    h1 {
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        margin: 0px;
+        font-weight: 120;
+        z-index: 9999;
+        font-family: myFirstFont;
+      }
+      *{
+        font-family: myFirstFont;
+      }
     
-}
-
-
-#center-wrapper {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 78vh; /* Full viewport height for the wrapper */
+      @font-face {
+        font-family: myFirstFont;
+        src: url(/AktivGroteskthin.ttf);
+      }
+      
+      
     
-   
-}
-
-#logo {
-    width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-
-
-
-.marquee-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: white; /* Optional: Set a background color */
-    z-index: 1000; /* Ensure it appears on top of other content */
-}
-
-.marquee {
-    display: flex;
-    overflow: hidden;
-    gap: 1rem; /* Adjust the gap as needed */
-    position: relative;
-    user-select: none;
-}
-
-.marquee-content {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    color: #000;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 550;
-    text-transform: lowercase;
-    line-height: 1.2em !important;
-    font-size: 30px;
-    letter-spacing: 2px;
-    min-width: 100%;
-    gap: 1rem; /* Match the gap */
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
+    
+    
+    
+    body {
+        background-color: white;
+        margin: 0;
+        overflow: hidden;
+      }
+    
+    
+    
+    #top {
+        display: flex;
+        justify-content: space-between; /* Spreads items (logo and nav) apart */
+        align-items: center;
+        padding: 1rem 2rem;
     }
-    to {
-        transform: translateX(calc(-100% - 1rem)); /* Match the gap */
+    
+    #nav1 ul {
+        padding: 0;
+        display: flex; 
+    }
+    
+    #nav1 ul li {
+        list-style: none;
+        margin-left: 25px;
+    }
+    
+    #nav1 ul li a {
+        text-decoration: none;
+        font-size: 10px;
+        color: black;
+        
+    }
+    
+    
+    #center-wrapper {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        height: 78vh; /* Full viewport height for the wrapper */
+        
+       
+    }
+    
+    #logo {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .marquee-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: white; /* Optional: Set a background color */
+        z-index: 1000; /* Ensure it appears on top of other content */
+    }
+    
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        gap: .5rem; /* Adjust the gap as needed */
+        position: relative;
+        user-select: none;
+    }
+    
+    .marquee-content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        color: #000;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 550;
+        text-transform: lowercase;
+        line-height: 1.2em !important;
+        font-size: 20px;
+        letter-spacing: 1.5px;
+        min-width: 100%;
+        gap: .5rem; /* Match the gap */
+    }
+    
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - .5rem)); /* Match the gap */
+        }
+    }
+    
+    .scroll {
+        animation: scroll 10s linear infinite;
     }
 }
-
-.scroll {
-    animation: scroll 10s linear infinite;
-}
+@media (min-width: 554px) {
+    h1 {
+        color: rgb(0, 0, 0);
+        font-size: 65px;
+        margin: 0px;
+        font-weight: 120;
+        z-index: 9999;
+        font-family: myFirstFont;
+      }
+      *{
+        font-family: myFirstFont;
+      }
+    
+      @font-face {
+        font-family: myFirstFont;
+        src: url(/AktivGroteskthin.ttf);
+      }
+      
+      
+    
+    
+    
+    
+    body {
+        background-color: white;
+        margin: 0;
+        overflow: hidden;
+      }
+    
+    
+    
+    #top {
+        display: flex;
+        justify-content: space-between; /* Spreads items (logo and nav) apart */
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    
+    #nav1 ul {
+        padding: 0;
+        display: flex; 
+    }
+    
+    #nav1 ul li {
+        list-style: none;
+        margin-left: 25px;
+    }
+    
+    #nav1 ul li a {
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        
+    }
+    
+    
+    #center-wrapper {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        height: 78vh; /* Full viewport height for the wrapper */
+        
+       
+    }
+    
+    #logo {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .marquee-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: white; /* Optional: Set a background color */
+        z-index: 1000; /* Ensure it appears on top of other content */
+    }
+    
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        gap: 1rem; /* Adjust the gap as needed */
+        position: relative;
+        user-select: none;
+    }
+    
+    .marquee-content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        color: #000;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 550;
+        text-transform: lowercase;
+        line-height: 1.2em !important;
+        font-size: 30px;
+        letter-spacing: 2px;
+        min-width: 100%;
+        gap: 1rem; /* Match the gap */
+    }
+    
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - 1rem)); /* Match the gap */
+        }
+    }
+    
+    .scroll {
+        animation: scroll 10s linear infinite;
+    }
+  }
