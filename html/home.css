@@ -33,7 +33,7 @@
         display: flex;
         justify-content: space-between; /* Spreads items (logo and nav) apart */
         align-items: center;
-        padding: 1rem 2rem;
+        padding: 0rem 1rem;
     }
     
     #nav1 ul {
@@ -64,7 +64,7 @@
     }
     
     #logo {
-        width: 500px;
+        width: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
