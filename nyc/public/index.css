@@ -1,50 +1,107 @@
-@font-face {
-  font-family: myFirstFont;
-  src: url(/AktivGroteskthin.ttf);
-}
-*{
-  font-family: myFirstFont;
-}
-body {
-  background-color: white;
-  margin: 0;
+@media (min-width: 1px), (max-width: 554px){
+  @font-face {
+    font-family: myFirstFont;
+    src: url(/AktivGroteskthin.ttf);
+  }
+  *{
+    font-family: myFirstFont;
+  }
+  body {
+    background-color: white;
+    margin: 0;
+    
+  }
   
-}
+  #heading {
+    display: flex;
+    justify-content: start; /* Spreads items (logo and nav) apart */
+    align-items: center;
+    padding: 0rem 1rem;
+  }
+  
+  
+  
+  h1 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin: 0px;
+    font-weight: 100;
+    z-index: 9999;
+  }
+  
+  h1 a {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color from h1 */
+  }
+  
+  h1 a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+  } 
+  
+  
+  iframe {
+    position: fixed ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Removes the default iframe border */
+    z-index: -1;
+  }
+  }
 
-#heading {
-  display: flex;
-  justify-content: start; /* Spreads items (logo and nav) apart */
-  align-items: center;
-  padding: 1rem 2rem;
-}
+@media (min-width: 554px){
+    @font-face {
+      font-family: myFirstFont;
+      src: url(/AktivGroteskthin.ttf);
+    }
+    *{
+      font-family: myFirstFont;
+    }
+    body {
+      background-color: white;
+      margin: 0;
+      
+    }
+    
+    #heading {
+      display: flex;
+      justify-content: start; /* Spreads items (logo and nav) apart */
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    
+    
+    
+    h1 {
+      color: rgb(0, 0, 0);
+      font-size: 65px;
+      margin: 0px;
+      font-weight: 100;
+      z-index: 9999;
+    }
+    
+    h1 a {
+      text-decoration: none; /* Remove underline from the link */
+      color: inherit; /* Inherit color from h1 */
+    }
+    
+    h1 a:hover {
+      text-decoration: underline; /* Optional: Add underline on hover */
+    } 
+    
+    
+    iframe {
+      position: fixed ;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none; /* Removes the default iframe border */
+      z-index: -1;
+    }
+  }
 
 
 
-h1 {
-  color: rgb(0, 0, 0);
-  font-size: 65px;
-  margin: 0px;
-  font-weight: 100;
-  z-index: 9999;
-}
 
-h1 a {
-  text-decoration: none; /* Remove underline from the link */
-  color: inherit; /* Inherit color from h1 */
-}
-
-h1 a:hover {
-  text-decoration: underline; /* Optional: Add underline on hover */
-}
-
-
-
-iframe {
-  position: fixed ;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none; /* Removes the default iframe border */
-  z-index: -1;
-}
