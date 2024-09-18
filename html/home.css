@@ -16,18 +16,6 @@
         src: url(/AktivGroteskthin.ttf);
       }
       
-      
-      #logo {
-        background-color: lightblue;
-        min-height: 200px; /* Adjust as needed */
-      }
-    
-      #logo svg {
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        max-width: none !important;
-      }
     
     body {
         background-color: white;
@@ -77,14 +65,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
     
+    #logo svg {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        min-height: 200px;
+      }
     
     
     
     
-    
-    
+
     .marquee-container {
         position: fixed;
         bottom: 0;
