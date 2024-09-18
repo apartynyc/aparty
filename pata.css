@@ -1,124 +1,82 @@
-@media (min-width: 1px), (max-width: 554px){
-  body {
-    background-color: white;
-    margin: 0;
-    font-family: myFirstFont;
-  }
-  
-  @font-face {
-    font-family: myFirstFont;
-    src: url(/AktivGroteskthin.ttf);
-  }
-  
-  img {
-    flex: 0 1 auto; /* Prevents the image from growing too large */
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
-  }
-  
-  #gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    
-  }
-  
-  img:hover {
-    transform: scale(1.5); /* Enlarges the image by 20% when hovered */
-    z-index: 1; /* Ensures the hovered image appears above others */
-  }
-  
-  #heading {
-    display: flex;
-    justify-content: flex-start; /* Changed from 'start' to 'flex-start' */
-    align-items: center;
-    padding: 0.45rem 1rem;
-  }
-  
+@font-face {
+  font-family: myFirstFont;
+  src: url(/AktivGroteskthin.ttf);
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  font-family: myFirstFont, Arial, sans-serif;
+}
+
+#heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  margin: 0;
+  font-weight: 100;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+#gallery img:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+#scrollable-text {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: white;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (min-width: 554px) {
   h1 {
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-    margin: 0px;
-    font-weight: 100;
-    font-family: myFirstFont;
-    z-index: 9999;
-  }
-  
-  h1 a {
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Inherit color from h1 */
-  }
-  
-  h1 a:hover {
-    text-decoration: underline; /* Optional: Add underline on hover */
+      font-size: 65px;
   }
 
-}
-@media (min-width: 554px){
-  body {
-    background-color: white;
-    margin: 0;
-    font-family: myFirstFont;
-  }
-  
-  @font-face {
-    font-family: myFirstFont;
-    src: url(/AktivGroteskthin.ttf);
-  }
-  
-  img {
-    flex: 0 1 auto; /* Prevents the image from growing too large */
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
-  }
-  
-  #gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    
-  }
-  
-  img:hover {
-    transform: scale(1.5); /* Enlarges the image by 20% when hovered */
-    z-index: 1; /* Ensures the hovered image appears above others */
-  }
-  
-  h1 {
-    color: rgb(0, 0, 0);
-    font-size: 65px;
-    margin: 0px;
-    font-weight: 100;
-    font-family: myFirstFont;
-    z-index: 9999;
-  }
-  
-  h1 a {
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Inherit color from h1 */
-  }
-  
-  h1 a:hover {
-    text-decoration: underline; /* Optional: Add underline on hover */
-  }
   #heading {
-    display: flex;
-    justify-content: start; /* Spreads items (logo and nav) apart */
-    align-items: center;
-    padding: 1rem 2rem;
+      padding: 1rem 2rem;
   }
 }
