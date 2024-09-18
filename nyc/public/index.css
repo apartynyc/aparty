@@ -2,33 +2,29 @@
   font-family: myFirstFont;
   src: url(/AktivGroteskthin.ttf);
 }
-
+*{
+  font-family: myFirstFont;
+}
 body {
   background-color: white;
   margin: 0;
-  font-family: myFirstFont;
+  
 }
 
 #heading {
-  position: fixed;
-  width: 100%;
-  padding-left: 40px;
-  padding-top: 20px;
+  display: flex;
+  justify-content: start; /* Spreads items (logo and nav) apart */
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.border {
-  background: linear-gradient(90deg, gray, 90%, black);
-  height: 2px;
-  width: 80vw;
-  margin-top: 4px;
-}
+
 
 h1 {
   color: rgb(0, 0, 0);
   font-size: 65px;
   margin: 0px;
   font-weight: 100;
-  font-family: myFirstFont;
   z-index: 9999;
 }
 
@@ -41,19 +37,6 @@ h1 a:hover {
   text-decoration: underline; /* Optional: Add underline on hover */
 }
 
-#progress-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#progress {
-  font-size: 3em;
-  color: black;
-}
 
 
 iframe {
