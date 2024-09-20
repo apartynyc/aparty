@@ -1,0 +1,17 @@
+body, a, button, input[type="submit"], input[type="button"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"), auto !important;
+}
+
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    font-size: 24px; /* Adjust size as needed */
+    line-height: 1;
+    user-select: none;
+    z-index: 10000;
+}
+/* Example link styles */
+a {
+    color: blue;
+    text-decoration: underline;
+}
