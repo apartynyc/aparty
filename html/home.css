@@ -18,24 +18,36 @@
 
       h1 {
         color: rgb(0, 0, 0);
-        font-size: 65px;
+        font-size: 30px;
         margin: 0px;
         font-weight: 120;
         z-index: 9999;
         font-family: myFirstFont;
+        position: relative; /* Add this */
+    }
+    
+    #top > h1:not(#contact) {
         position: relative;
     }
     
-    h1::after {
+    #top > h1:not(#contact)::after {
         content: '*';
         position: absolute;
-        right: -0.5em;
+        left: 100%;
+        top: 0;
         opacity: 0;
         transition: opacity 0.3s ease;
+        margin-left: 1px;
     }
     
-    h1:hover::after {
+    #top > h1:not(#contact):hover::after {
         opacity: 1;
+    }
+    
+    /* Ensure #contact doesn't have an after pseudo-element */
+    #contact::after {
+        content: none !important;
+        display: none !important;
     }
       
     
@@ -61,7 +73,7 @@
     
     #nav1 ul li {
         list-style: none;
-        margin-left: 20px;
+        margin-left: 10px;
     }
     
     #nav1 ul li a {
@@ -70,15 +82,11 @@
         color: black;
         
     }
-    
-    
     #center-wrapper {
         display: flex;
-        justify-content: center; /* Centers horizontally */
-        align-items: center; /* Centers vertically */
-        height: 78vh; /* Full viewport height for the wrapper */
-        
-       
+        justify-content: center;
+        align-items: center;
+        height: 78vh;
     }
     
     #logo {
@@ -87,7 +95,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
     }
     
     #logo svg {
@@ -96,9 +103,18 @@
         height: auto !important;
         max-width: none !important;
         min-height: 200px;
-      }
+    }
     
+   
     
+    #contact{
+        font-size: 8px;
+        padding-top: 3px;
+        padding-left: 10px;
+    }
+    #contact:hover{
+        color: red;
+    }
     
     
 
