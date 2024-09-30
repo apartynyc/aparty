@@ -128,6 +128,7 @@
     margin: 0; /* Remove default margin */
     display: flex;
     list-style: none; /* Remove bullet points */
+    padding-left: 32px;
 }
 
 #nav2 ul li {
@@ -247,8 +248,6 @@
         position: relative;
     }
     
-    
-
     h1::after {
         content: '*';
         position: absolute;
@@ -274,20 +273,33 @@
         padding: 1rem 2rem;
     }
 
+    h1 {
+        flex: 0 1 auto; /* Allow the title to shrink if necessary */
+    }
+
+    .nav-menu-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 0 1 auto; /* Allow the group to shrink if necessary */
+    }
+
     #nav1 {
-        display: block;
-        order: 3; /* Move nav1 to the right */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 60px; /* Space between nav1 and dropdown */
     }
 
     #top #nav1 ul {
         padding: 0;
+        margin: 0;
+        list-style: none;
         display: flex;
-        justify-content: flex-end; /* Align nav items to the right */
     }
 
     #top #nav1 ul li {
-        list-style: none;
-        margin-left: 25px;
+        margin: 0 12px;
     }
 
     #top #nav1 ul li a {
@@ -295,6 +307,7 @@
         font-size: 20px;
         color: black;
         transition: color 0.3s ease;
+        white-space: nowrap; /* Prevent links from wrapping */
     }
 
     #top #nav1 ul li a:hover {
@@ -302,21 +315,51 @@
     }
 
     #contact {
-        display: block;
-        font-size: 20px;
-        order: 2; /* Move contact to the middle */
-    }
-
-    #contact:hover {
-        color: red;
+        display: none;
     }
 
     .dropdown {
-        display: none; /* Hide dropdown on non-mobile screens */
+        display: block;
     }
 
-    
-   
+    .dropbtn {
+        background-color: transparent;
+        color: black;
+        padding: 10px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap; /* Prevent button text from wrapping */
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 2rem;
+        top: 100%;
+        min-width: 100px;
+        z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+    }
+
+    .dropdown-content a:hover {
+        color: red;
+    }
+
+    .show {
+        display: block !important;
+    }
     
     #center-wrapper {
         display: flex;
@@ -331,28 +374,23 @@
         align-items: center;
         justify-content: center;
     }
-
     
-    
-    
-    #nav2{
+    #nav2 {
         display: none;
     }
-    
-    
     
     .marquee-container {
         position: fixed;
         bottom: 0;
         width: 100%;
-        background-color: white; /* Optional: Set a background color */
-        z-index: 1000; /* Ensure it appears on top of other content */
+        background-color: white;
+        z-index: 1000;
     }
     
     .marquee {
         display: flex;
         overflow: hidden;
-        gap: .5rem; /* Adjust the gap as needed */
+        gap: .5rem;
         position: relative;
         user-select: none;
     }
@@ -369,8 +407,7 @@
         font-size: 30px;
         letter-spacing: 2px;
         min-width: 50%;
-        gap: .5rem; /* Match the gap */
-        
+        gap: .5rem;
     }
     
     @keyframes scroll {
@@ -378,11 +415,53 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(calc(-100% - .5rem)); /* Match the gap */
+            transform: translateX(calc(-100% - .5rem));
         }
     }
     
     .scroll {
         animation: scroll 10s linear infinite;
     }
-  }
+    @media (max-width: 1000px) {
+        h1 {
+            font-size: 50px;
+        }
+
+        #top #nav1 ul li a {
+            font-size: 16px;
+        }
+
+        .dropbtn {
+            font-size: 16px;
+        }
+        #nav1{
+            margin-right: 40px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        h1 {
+            font-size: 40px;
+        }
+
+        #top #nav1 ul li a {
+            font-size: 14px;
+        }
+
+        .dropbtn {
+            font-size: 14px;
+        }
+
+        .nav-menu-group {
+            margin-left: 15px;
+        }
+
+        #nav1 {
+            margin-right: 40px; /* Adjusted for smaller screens */
+        }
+
+        #top #nav1 ul li {
+            margin: 0 6px; /* Adjusted for smaller screens */
+        }
+    }
+}
