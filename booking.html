@@ -6,19 +6,20 @@
     <title>Book Our Sound System</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 80px;
+            background-color: white;
         }
         .container {
             max-width: 600px;
             margin: auto;
             background: white;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 0px;
+            border: 1px solid black;
+           
         }
         h1 {
             color: #333;
@@ -37,24 +38,36 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: black;
+            box-shadow: 0 0 5px black(76, 175, 80, 0.5);
         }
         button {
-            background-color: #4CAF50;
-            color: white;
+            background-color: white;
+            color: black;
             padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
+            border: 1px solid black;
+            border-radius: 0px;
             cursor: pointer;
             font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px black(76, 175, 80, 0.5);
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #ddd;
+            color: red;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Book Our Sound System</h1>
+        <h1>Book a party system</h1>
         <form action="https://formsubmit.co/info@aparty.nyc" method="POST">
             <input type="hidden" name="_subject" value="New Sound System Booking">
             <input type="hidden" name="_template" value="table">
@@ -75,11 +88,11 @@
             <label for="system">Which System:</label>
             <select id="system" name="system" required>
                 <option value="">Select a system</option>
-                <option value="Small PA">Small PA System</option>
-                <option value="Medium PA">Medium PA System</option>
-                <option value="Large PA">Large PA System</option>
-                <option value="DJ">DJ System</option>
-                <option value="Live Band">Live Band System</option>
+                <option value="Qsc System">Qsc System</option>
+                <option value="Martin System">Martin System</option>
+                <option value="Masada System">Masada System</option>
+                <option value="Dj Equipment">Dj Equipment</option>
+                <option value="Custom">Custom</option>
             </select>
 
             <label for="additionalInfo">Additional Information:</label>
