@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Our Sound System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Our Sound System</h1>
+        <form action="https://formsubmit.co/" method="POST">
+            <input type="hidden" name="_subject" value="New Booking: {system} System">
+            <input type="hidden" name="_template" value="table">
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="system">Which System:</label>
+            <select id="system" name="system" required onchange="updateSubject()">
+                <option value="">Select a system</option>
+                <option value="Small PA">Small PA System</option>
+                <option value="Medium PA">Medium PA System</option>
+                <option value="Large PA">Large PA System</option>
+                <option value="DJ">DJ System</option>
+                <option value="Live Band">Live Band System</option>
+            </select>
+
+            <label for="additionalInfo">Additional Information:</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+
+            <button type="submit">Submit Booking Request</button>
+        </form>
+    </div>
+
+    <script>
+        function updateSubject() {
+            var system = document.getElementById('system').value;
+            document.querySelector('input[name="_subject"]').value = `New Booking: ${system} System`;
+        }
+    </script>
+</body>
+</html>

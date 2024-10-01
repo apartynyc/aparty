@@ -5,7 +5,7 @@
     }
     
     body {
-        font-family: myfirstfont;
+        font-family: 'Times New Roman', Times, serif;
         margin: 0;
         padding: 0;
     }
@@ -243,7 +243,7 @@
         }
         
         body {
-            font-family: myFirstFont;
+            font-family: 'Times New Roman', Times, serif;
             background-color: white;
             margin: 0;
             padding: 0;
