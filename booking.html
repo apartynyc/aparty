@@ -56,8 +56,9 @@
     <div class="container">
         <h1>Book Our Sound System</h1>
         <form action="https://formsubmit.co/info@aparty.nyc" method="POST">
-            <input type="hidden" name="_subject" value="New Booking: {system} System">
+            <input type="hidden" name="_subject" value="New Sound System Booking">
             <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your booking request. We will get back to you shortly.">
             
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -72,7 +73,7 @@
             <input type="date" id="date" name="date" required>
 
             <label for="system">Which System:</label>
-            <select id="system" name="system" required onchange="updateSubject()">
+            <select id="system" name="system" required>
                 <option value="">Select a system</option>
                 <option value="Small PA">Small PA System</option>
                 <option value="Medium PA">Medium PA System</option>
@@ -87,12 +88,5 @@
             <button type="submit">Submit Booking Request</button>
         </form>
     </div>
-
-    <script>
-        function updateSubject() {
-            var system = document.getElementById('system').value;
-            document.querySelector('input[name="_subject"]').value = `New Booking: ${system} System`;
-        }
-    </script>
 </body>
 </html>
