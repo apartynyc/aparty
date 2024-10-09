@@ -1,0 +1,155 @@
+
+        @media (min-width: 1px), (max-width: 626px) {
+            @font-face {
+                font-family: myFirstFont;
+                src: url(/AktivGroteskthin.ttf);
+            }
+                    *{
+                    font-family: myFirstFont;
+                }
+                #heading {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 0rem 1rem; /* Reduced padding */
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    
+                    z-index: 1000;
+                    height: auto; /* Allow height to adjust based on content */
+                    min-height: 40px; /* Minimum height to ensure visibility */
+                }
+                
+            
+                    body {
+                        
+                        line-height: 1.6;
+                        margin: 0;
+                        padding: 30px;
+                        background-color: white;
+                        padding-top: 100px;
+                        overflow: hidden;
+                    }
+                    .container {
+                        max-width: 600px;
+                        margin: auto;
+                        background: white;
+                        padding: 20px;
+                        border-radius: 0px;
+                        border: 1px solid black;
+                        overflow: scroll;
+                       
+                    }
+                    h1 {
+                        color: #333;
+                        text-align: center;
+                    }
+                    form {
+                        display: grid;
+                        gap: 10px;
+                    }
+                    label {
+                        font-weight: bold;
+                    }
+                    input, select, textarea {
+                        width: 100%;
+                        padding: 8px;
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        transition: border-color 0.3s ease;
+                    }
+                    input:focus, select:focus, textarea:focus {
+                        outline: none;
+                        border-color: black;
+                        box-shadow: 0 0 5px black(76, 175, 80, 0.5);
+                    }
+                    button {
+                        background-color: white;
+                        color: black;
+                        padding: 10px 15px;
+                        border: 1px solid black;
+                        border-radius: 0px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        font-family: 'Times New Roman', Times, serif;
+                    }
+                    button:focus {
+                        outline: none;
+                        box-shadow: 0 0 5px black(76, 175, 80, 0.5);
+                    }
+                    button:hover {
+                        background-color: #ddd;
+                        color: red;
+                    }
+        }
+
+        @media (min-width: 627px) {
+            @font-face {
+                font-family: myFirstFont;
+                src: url(/AktivGroteskthin.ttf);
+            }
+                    *{
+                    font-family: myFirstFont;
+                }
+                    body {
+                        
+                        line-height: 1.6;
+                        margin: 0;
+                        padding: 80px;
+                        background-color: white;
+                    }
+                    .container {
+                        max-width: 600px;
+                        margin: auto;
+                        background: white;
+                        padding: 20px;
+                        border-radius: 0px;
+                        border: 1px solid black;
+                       
+                    }
+                    h1 {
+                        color: #333;
+                        text-align: center;
+                    }
+                    form {
+                        display: grid;
+                        gap: 10px;
+                    }
+                    label {
+                        font-weight: bold;
+                    }
+                    input, select, textarea {
+                        width: 100%;
+                        padding: 8px;
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        transition: border-color 0.3s ease;
+                    }
+                    input:focus, select:focus, textarea:focus {
+                        outline: none;
+                        border-color: black;
+                        box-shadow: 0 0 5px black(76, 175, 80, 0.5);
+                    }
+                    button {
+                        background-color: white;
+                        color: black;
+                        padding: 10px 15px;
+                        border: 1px solid black;
+                        border-radius: 0px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        font-family: 'Times New Roman', Times, serif;
+                    }
+                    button:focus {
+                        outline: none;
+                        box-shadow: 0 0 5px black(76, 175, 80, 0.5);
+                    }
+                    button:hover {
+                        background-color: #ddd;
+                        color: red;
+                    }
+        }

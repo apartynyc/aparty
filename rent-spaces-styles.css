@@ -4,8 +4,12 @@
         src: url(/AktivGroteskthin.ttf);
     }
     
+    *{
+        font-family: myFirstFont;
+    }
+
     body {
-        font-family: 'Times New Roman', Times, serif;
+       
         margin: 0;
         padding: 0;
     }
@@ -241,9 +245,10 @@
             font-family: myFirstFont;
             src: url(/AktivGroteskthin.ttf);
         }
-        
+        *{
+            font-family: myFirstFont;
+        }
         body {
-            font-family: 'Times New Roman', Times, serif;
             background-color: white;
             margin: 0;
             padding: 0;
