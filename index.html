@@ -11,11 +11,12 @@
         <link rel="shortcut icon" type="image/png" href="./favicon.png" sizes="16x16">
     </head> 
 
-    <body>
+  
          <body class="video-playing">
-        <div id="video-container">
-            <video id="background-video" autoplay loop muted>
+          <div id="video-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;">
+            <video id="background-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
                 <source src="found.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
     
@@ -691,37 +692,56 @@
         </div>
 
          <script>
-        document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function() {
     var videoContainer = document.getElementById('video-container');
-    var cursor = document.getElementById('cursor');
+    var video = document.getElementById('background-video');
+    var websiteShown = false;
 
-    function showWebsite() {
-        if (videoContainer) {
-            videoContainer.style.display = 'none';
-        }
+    function playVideoWithSound() {
+        if (websiteShown) return; // Don't play if website is shown
+        video.muted = false;
+        var playPromise = video.play();
         
-        // Remove video-playing class from body
-        document.body.classList.remove('video-playing');
-        
-        // Change cursor color back to its original color (assuming it's black)
-        if (cursor) {
-            cursor.style.color = 'black';
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                console.log("Video playing with sound");
+            }).catch(error => {
+                console.log("Autoplay prevented, trying muted");
+                video.muted = true;
+                video.play();
+            });
         }
-        
-        // Show all other elements that might have been hidden
-        var allElements = document.body.getElementsByTagName('*');
-        for (var i = 0; i < allElements.length; i++) {
-            if (allElements[i] !== videoContainer && allElements[i] !== cursor) {
-                allElements[i].style.display = '';
-            }
-        }
-
-        // Remove the click event listener
-        document.removeEventListener('click', showWebsite);
     }
 
-    // Add the click event listener to the document
+    // Try to play video with sound immediately
+    playVideoWithSound();
+
+    function showWebsite() {
+        if (websiteShown) return; // Prevent multiple executions
+        websiteShown = true;
+        videoContainer.style.display = 'none';
+        video.pause();
+        video.currentTime = 0; // Reset video to beginning
+        video.muted = true; // Ensure it's muted for next time
+        document.body.classList.remove('video-playing');
+        
+        // Remove all event listeners that might restart the video
+        video.removeEventListener('pause', playVideoWithSound);
+        document.removeEventListener('click', unmute);
+    }
+
+    // Show website content on click
     document.addEventListener('click', showWebsite);
+
+    function unmute() {
+        if (!websiteShown && video.muted) {
+            video.muted = false;
+            video.play();
+        }
+    }
+
+    // Add a user gesture listener to unmute if initially muted
+    document.addEventListener('click', unmute, { once: true });
 });
 
 
