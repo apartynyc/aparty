@@ -12,11 +12,16 @@
     </head> 
 
     <body>
-
+         <body class="video-playing">
+        <div id="video-container">
+            <video id="background-video" autoplay loop muted>
+                <source src="found.mp4" type="video/mp4">
+            </video>
+        </div>
     
         <script src="./cursor.js"></script>
         <div id="cursor">*</div>
-        
+        <div id="hidden">
         <div id="top">
           <h1>a party</h1>
           <div class="nav-menu-group">
@@ -683,8 +688,43 @@
                 
             </div>
          </div>
+        </div>
 
          <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var videoContainer = document.getElementById('video-container');
+    var cursor = document.getElementById('cursor');
+
+    function showWebsite() {
+        if (videoContainer) {
+            videoContainer.style.display = 'none';
+        }
+        
+        // Remove video-playing class from body
+        document.body.classList.remove('video-playing');
+        
+        // Change cursor color back to its original color (assuming it's black)
+        if (cursor) {
+            cursor.style.color = 'black';
+        }
+        
+        // Show all other elements that might have been hidden
+        var allElements = document.body.getElementsByTagName('*');
+        for (var i = 0; i < allElements.length; i++) {
+            if (allElements[i] !== videoContainer && allElements[i] !== cursor) {
+                allElements[i].style.display = '';
+            }
+        }
+
+        // Remove the click event listener
+        document.removeEventListener('click', showWebsite);
+    }
+
+    // Add the click event listener to the document
+    document.addEventListener('click', showWebsite);
+});
+
+
           var dropdownOpen = false;
   
           document.getElementById("dropbtn").addEventListener("click", function(event) {
