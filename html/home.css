@@ -1,35 +1,7 @@
-#video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9998;
-}
-
-#background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-body.video-playing #cursor {
-    color: white;
-}
-
-body.video-playing > *:not(#video-container):not(#cursor) {
-    display: none;
-}
-
-#cursor {
-    position: fixed;
-    pointer-events: none;
-    z-index: 10000;
-}
-
-
-
 @media (min-width: 1px), (max-width: 626px) {
+    *{
+        cursor: none;
+    }
     h1 {
         color: rgb(0, 0, 0);
         font-size: 30px;
@@ -246,6 +218,28 @@ body.video-playing > *:not(#video-container):not(#cursor) {
     .scroll {
         animation: scroll 10s linear infinite;
     }
+    #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+    }
+
+    #background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body.video-playing > *:not(#video-container):not(#cursor) {
+        display: none;
+    }
+
+    body.video-playing #cursor {
+        color: white;
+    }
 }
 @media (min-width: 627px) {
     h1 {
@@ -444,6 +438,28 @@ body.video-playing > *:not(#video-container):not(#cursor) {
     
     .scroll {
         animation: scroll 10s linear infinite;
+    }
+    #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+    }
+
+    #background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body.video-playing > *:not(#video-container):not(#cursor) {
+        display: none;
+    }
+
+    body.video-playing #cursor {
+        color: white;
     }
     @media (max-width: 1000px) {
         h1 {
