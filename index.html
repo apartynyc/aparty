@@ -10,7 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="./favicon.png" sizes="16x16">
     </head> 
-
+    <script src="./cursor.js"></script>
+    <div id="cursor">*</div>
   
          <body class="video-playing">
           <div id="video-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;">
@@ -19,9 +20,7 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-    
-        <script src="./cursor.js"></script>
-        <div id="cursor">*</div>
+    <div id="content">
         <div id="hidden">
         <div id="top">
           <h1>a party</h1>
@@ -690,58 +689,143 @@
             </div>
          </div>
         </div>
+      </div>
 
          <script>
-      document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function() {
     var videoContainer = document.getElementById('video-container');
     var video = document.getElementById('background-video');
-    var websiteShown = false;
+    var websiteContent = document.getElementById('content');
+    var cursor = document.getElementById('cursor');
 
-    function playVideoWithSound() {
-        if (websiteShown) return; // Don't play if website is shown
-        video.muted = false;
+    var currentPage = window.location.pathname;
+    var lastPage = sessionStorage.getItem('lastPage');
+    var videoPlayed = sessionStorage.getItem('videoPlayed');
+    var internalNavigation = sessionStorage.getItem('internalNavigation') === 'true';
+
+    console.log("Current page:", currentPage);
+    console.log("Last page:", lastPage);
+    console.log("Video played:", videoPlayed);
+    console.log("Internal navigation:", internalNavigation);
+
+    function setWhiteCursor() {
+        if (cursor) {
+            cursor.style.color = 'white';
+        }
+        document.body.style.cursor = 'none';
+    }
+
+    function setBlackCursor() {
+        if (cursor) {
+            cursor.style.color = 'black';
+        }
+        document.body.style.cursor = 'auto';
+    }
+
+    function playVideo() {
+        console.log("Playing video");
+        videoContainer.style.display = 'block';
+        websiteContent.style.display = 'none';
+        setWhiteCursor();
+        
+        video.muted = false; // Try to play unmuted first
         var playPromise = video.play();
         
         if (playPromise !== undefined) {
             playPromise.then(_ => {
-                console.log("Video playing with sound");
+                console.log("Video playing successfully with sound");
             }).catch(error => {
-                console.log("Autoplay prevented, trying muted");
+                console.error("Unmuted playback failed, trying muted:", error);
                 video.muted = true;
-                video.play();
+                video.play().then(_ => {
+                    console.log("Video playing muted");
+                    addUnmuteButton();
+                }).catch(innerError => {
+                    console.error("Muted playback also failed:", innerError);
+                    showWebsite(); // Fallback to showing website if video fails
+                });
             });
         }
     }
 
-    // Try to play video with sound immediately
-    playVideoWithSound();
+    function addUnmuteButton() {
+        var unmuteButton = document.createElement('button');
+        unmuteButton.textContent = 'Tap for Sound';
+        unmuteButton.style.position = 'fixed';
+        unmuteButton.style.zIndex = '10000';
+        unmuteButton.style.bottom = '20px';
+        unmuteButton.style.left = '50%';
+        unmuteButton.style.transform = 'translateX(-50%)';
+        unmuteButton.style.padding = '10px 20px';
+        unmuteButton.style.backgroundColor = 'rgba(0,0,0,0.5)';
+        unmuteButton.style.color = 'white';
+        unmuteButton.style.border = 'none';
+        unmuteButton.style.borderRadius = '5px';
+        unmuteButton.addEventListener('click', function() {
+            video.muted = false;
+            video.play().then(() => {
+                console.log("Video unmuted and playing");
+            }).catch(error => {
+                console.error("Failed to unmute:", error);
+            });
+            this.remove();
+        });
+        document.body.appendChild(unmuteButton);
+    }
 
     function showWebsite() {
-        if (websiteShown) return; // Prevent multiple executions
-        websiteShown = true;
+        console.log("Showing website content");
         videoContainer.style.display = 'none';
+        websiteContent.style.display = 'block';
+        setBlackCursor();
         video.pause();
-        video.currentTime = 0; // Reset video to beginning
-        video.muted = true; // Ensure it's muted for next time
-        document.body.classList.remove('video-playing');
-        
-        // Remove all event listeners that might restart the video
-        video.removeEventListener('pause', playVideoWithSound);
-        document.removeEventListener('click', unmute);
     }
 
-    // Show website content on click
-    document.addEventListener('click', showWebsite);
-
-    function unmute() {
-        if (!websiteShown && video.muted) {
-            video.muted = false;
-            video.play();
-        }
+    function isHomePage() {
+        return currentPage === '/' || currentPage === '/index.html';
     }
 
-    // Add a user gesture listener to unmute if initially muted
-    document.addEventListener('click', unmute, { once: true });
+    function shouldPlayVideo() {
+        return isHomePage() && !internalNavigation && (
+            !videoPlayed || // First visit
+            (lastPage === currentPage && isHomePage()) // Refresh on home page
+        );
+    }
+
+    if (shouldPlayVideo()) {
+        playVideo();
+        var showWebsiteHandler = function() {
+            showWebsite();
+            sessionStorage.setItem('videoPlayed', 'true');
+            document.removeEventListener('click', showWebsiteHandler);
+            document.removeEventListener('touchend', showWebsiteHandler);
+        };
+        document.addEventListener('click', showWebsiteHandler);
+        document.addEventListener('touchend', showWebsiteHandler);
+    } else {
+        showWebsite();
+    }
+
+    // Reset internal navigation flag
+    sessionStorage.setItem('internalNavigation', 'false');
+
+    // Update last page visited
+    sessionStorage.setItem('lastPage', currentPage);
+
+    // Handle navigation within the site
+    document.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            if (link.hostname === window.location.hostname) {
+                sessionStorage.setItem('videoPlayed', 'true');
+                sessionStorage.setItem('internalNavigation', 'true');
+            }
+        });
+    });
+
+    // Ensure cursor color is set correctly when video plays or ends
+    video.addEventListener('play', setWhiteCursor);
+    video.addEventListener('ended', setBlackCursor);
 });
 
 
