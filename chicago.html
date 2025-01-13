@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fimm 07.24.24</title>
+    <link rel="stylesheet" href="pata.css">
+    
+</head>
+<body>
+    
+    <div id="heading">
+        <h1><a href="../../index.html">a party</a></h1>
+    </div>
+    
+
+    <!-- Fixed gallery -->
+    <div id="gallery">
+        <img src="chicagoimg/img1.JPG" alt="Image 1">
+        <img src="chicagoimg/img2.jpg" alt="Image 2">
+        <img src="chicagoimg/img3.jpg" alt="Image 3">
+        <video src="chicagoimg/vid4.mp4" loop muted></video>
+        <img src="chicagoimg/img5.jpg" alt="Image 5">
+        <video src="chicagoimg/vid6.mp4" loop muted></video>
+        <img src="chicagoimg/img7.jpg" alt="Image 7">
+        <img src="chicagoimg/img8.jpg" alt="Image 8">
+        <img src="chicagoimg/img9.jpg" alt="Image 9">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('#gallery video');
+
+  videos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+      video.play();
+    });
+
+    video.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+});
+    </script>
+</body>
+</html>

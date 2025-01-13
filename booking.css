@@ -1,0 +1,179 @@
+
+        @media (min-width: 1px), (max-width: 626px) {
+            @font-face {
+                font-family: myFirstFont;
+                src: url(/AktivGroteskthin.ttf);
+            }
+                    *{
+                    font-family: myFirstFont;
+                }
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    font-family: Arial, sans-serif;
+                }
+                
+                body {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #f4f4f4;
+                }
+                
+                #heading {
+                    padding: 20px;
+                    text-align: center;
+                }
+                
+                #heading h1 {
+                    margin: 0;
+                }
+                
+                #heading a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+                
+                .container {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 600px;
+                    width: 90%;
+                    margin: 0 auto;
+                    background: white;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                    overflow: hidden;
+                    max-height: calc(100vh - 80px); /* Adjust based on your heading height */
+                }
+                
+                .container h1 {
+                    margin-top: 0;
+                }
+                
+                form {
+                    display: grid;
+                    gap: 10px;
+                    overflow-y: auto;
+                    padding-right: 10px; /* Add some padding for the scrollbar */
+                }
+                
+                label {
+                    font-weight: bold;
+                }
+                
+                input, select, textarea {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+                
+                button {
+                    background-color: transparent;
+                    color: #4CAF50;
+                    padding: 10px 15px;
+                    border: 2px solid #4CAF50;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                }
+                
+                button:hover {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+        }
+
+        @media (min-width: 627px) {
+            @font-face {
+                font-family: myFirstFont;
+                src: url(/AktivGroteskthin.ttf);
+            }
+                    *{
+                    font-family: myFirstFont;
+                }
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    font-family: Arial, sans-serif;
+                }
+                
+                body {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #f4f4f4;
+                }
+                
+                #heading {
+                    padding: 20px;
+                    text-align: center;
+                }
+                
+                #heading h1 {
+                    margin: 0;
+                }
+                
+                #heading a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+                
+                .container {
+                    flex-grow: 1;
+                    max-width: 600px;
+                    width: 90%;
+                    margin: 0 auto;
+                    background: white;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                    overflow-y: auto;
+                    max-height: calc(100vh - 100px); /* Adjust based on your heading height */
+                }
+                
+                h1 {
+                    color: #333;
+                    text-align: center;
+                }
+                
+                form {
+                    display: grid;
+                    gap: 10px;
+                }
+                
+                label {
+                    font-weight: bold;
+                }
+                
+                input, select, textarea {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+                
+                button {
+                    background-color: transparent;
+                    color: black;
+                    padding: 10px 15px;
+                    border: 2px solid black;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                }
+                
+                button:hover {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+        }

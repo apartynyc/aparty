@@ -1,0 +1,216 @@
+@media (min-width: 1px), (max-width: 626px) {
+    * {
+        cursor: none;
+        font-family: myFirstFont;
+    }
+
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    
+    #center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 78vh;
+        transition: opacity 1s ease-out;
+    }
+    
+    #logo {
+        width: 80%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s ease-out;
+    }
+    
+    #logo svg {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        min-height: 200px;
+    }
+    
+    .marquee-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1000;
+    }
+    
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        gap: .5rem;
+        position: relative;
+        user-select: none;
+    }
+    
+    .marquee-content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        color: #000;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 550;
+        text-transform: lowercase;
+        line-height: 1.2em !important;
+        font-size: 20px;
+        letter-spacing: 1.5px;
+        min-width: 100%;
+        gap: .5rem;
+    }
+    
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - .5rem));
+        }
+    }
+    
+    .scroll {
+        animation: scroll 10s linear infinite;
+    }
+
+    #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+    }
+
+    #background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body.video-playing > *:not(#video-container):not(#cursor) {
+        display: none;
+    }
+
+    body.video-playing #cursor {
+        color: white;
+    }
+}
+
+@media (min-width: 627px) {
+    * {
+        font-family: myFirstFont;
+    }
+    
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    #center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        transition: opacity 1s ease-out;
+    }
+    
+    #logo {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s ease-out;
+    }
+    
+    .marquee-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1000;
+    }
+    
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        gap: .5rem;
+        position: relative;
+        user-select: none;
+    }
+    
+    .marquee-content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        color: #000;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 550;
+        text-transform: lowercase;
+        line-height: 1.2em !important;
+        font-size: 30px;
+        letter-spacing: 2px;
+        min-width: 50%;
+        gap: .5rem;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - .5rem));
+        }
+    }
+    
+    .scroll {
+        animation: scroll 10s linear infinite;
+    }
+
+    #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+    }
+
+    #background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body.video-playing > *:not(#video-container):not(#cursor) {
+        display: none;
+    }
+
+    body.video-playing #cursor {
+        color: white;
+    }
+}
+
+@font-face {
+    font-family: nimbus-big;
+    src: url(/nimbus/NimbusRomNo9L-Med.otf);
+}
+
+@font-face {
+    font-family: nimbus-small;
+    src: url(/nimbus/NimbusRomNo9L-Reg.otf);
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/AktivGroteskthin.ttf);
+}

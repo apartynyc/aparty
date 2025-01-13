@@ -1,0 +1,521 @@
+@media (min-width: 1px), (max-width: 626px) {
+    @font-face {
+        font-family: myFirstFont;
+        src: url(/AktivGroteskthin.ttf);
+    }
+    
+    *{
+        font-family: myFirstFont;
+    }
+
+    body {
+       
+        margin: 0;
+        padding: 0;
+    }
+    
+    #heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1rem; /* Reduced padding */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        z-index: 1000;
+        height: auto; /* Allow height to adjust based on content */
+        min-height: 40px; /* Minimum height to ensure visibility */
+    }
+    
+    #heading h1 {
+        font-size: 30px; /* Reduced font size */
+        margin: 0;
+        padding: 0;
+        font-weight: 100;
+    }
+    
+    #heading h1 a {
+        text-decoration: none;
+        color: inherit;
+    }
+    #heading h1 a:hover{
+        text-decoration: underline;
+    }
+    
+
+    #heading h2 {
+            position: absolute;
+            left: 85%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            font-weight: 100;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 60%; /* Prevent overlap with h1 */
+    }
+    
+    #main-content {
+        padding-top: 20px; /* Should match the min-height of #heading */
+        box-sizing: border-box;
+    }
+    
+    .container {
+        padding: 10px;
+        margin-top: 0;
+    }
+    
+    /* Remove any top margin or padding from the first element in the container */
+    .container > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    /* Ensure the search container doesn't add extra space */
+    .search-container {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    
+    .search-input {
+        flex-grow: 1;
+        padding: 10px;
+        padding-right: 50px;
+        font-size: 1em;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 60%;
+    }
+    
+    .search-button {
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 10px ;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-left: 10px;
+        position: relative;
+    }
+    
+    .search-button::after {
+        content: '*';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        font-size: 1em;
+        transition: opacity 0.2s ease;
+    }
+    
+    .search-button:hover::after {
+        opacity: 1;
+    }
+    
+    .space-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .space-card {
+        background-color: white;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .image-container {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .space-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .space-card:hover .space-image {
+        transform: scale(1.05);
+    }
+    
+    .image-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .image-nav.prev {
+        left: 10px;
+        color: black;
+    }
+    
+    .image-nav.next:hover{
+        color: red;
+    }
+    
+    .image-nav.next {
+        right: 10px;
+        color: black;
+    }
+    .image-nav.prev:hover{
+        color: red;
+    }
+    
+    .space-card:hover .image-nav {
+        opacity: 1;
+    }
+    
+    .space-content-wrapper {
+        padding: 15px;
+    }
+    
+    .space-name {
+        font-size: 1.2em;
+        color: #333;
+        margin: 0 0 10px 0;
+    }
+    
+    .space-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        color: #666;
+        font-size: 0.9em;
+    }
+    
+    .space-detail svg {
+        margin-right: 5px;
+    }
+    
+    .price-text {
+        color: black;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 15px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .price-text::after {
+        content: '*';
+        position: absolute;
+        right: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        font-size: 1em;
+        color: black;
+    }
+    
+    .space-card:hover .price-text::after {
+        opacity: 1;
+    }
+    
+    .no-results {
+        text-align: center;
+        color: #666;
+        margin-top: 20px;
+    }
+    }
+    @media (min-width: 627px) {
+        @font-face {
+            font-family: myFirstFont;
+            src: url(/AktivGroteskthin.ttf);
+        }
+        *{
+            font-family: myFirstFont;
+        }
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            z-index: 1000;
+            height: 60px;
+        }
+    
+        #heading h1 {
+            flex: 0 0 auto; /* Don't grow or shrink, stay at auto width */
+            color: rgb(0, 0, 0);
+            font-size: 65px;
+            margin: 0;
+            font-weight: 100;
+            white-space: nowrap; /* Prevent wrapping */
+        }
+    
+        #heading h1 a {
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        #heading h1 a:hover {
+            text-decoration: underline;
+        }
+    
+        #heading h2 {
+            flex: 1 1 auto; /* Grow and shrink as needed, start with auto width */
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            margin: 0 1rem; /* Add horizontal margin for spacing */
+            font-weight: 100;
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Add ellipsis if text overflows */
+        }
+    
+        /* Add a placeholder element to balance the layout */
+        #heading::after {
+            content: '';
+            flex: 0 0 auto;
+            width: 65px; /* Match the width of h1, adjust as needed */
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            #heading h1 {
+                font-size: 40px;
+            }
+    
+            #heading h2 {
+                font-size: 24px;
+            }
+    
+            #heading::after {
+                width: 40px;
+            }
+        }
+    
+        @media (max-width: 750px) {
+            #heading h1 {
+                font-size: 30px;
+            }
+    
+            #heading h2 {
+                font-size: 20px;
+            }
+    
+            #heading::after {
+                width: 30px;
+            }
+        }
+        
+        #main-content {
+            padding-top: 50px; /* Adjust this value to push the content down */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Ensure the h1 inside the React component doesn't override the header styles */
+        .container h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 1em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .search-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .search-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+            position: relative;
+        }
+        
+        .search-button::after {
+            content: '*';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            font-size: 1em;
+            transition: opacity 0.2s ease;
+        }
+        
+        .search-button:hover::after {
+            opacity: 1;
+        }
+        
+        .space-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .space-card {
+            background-color: white;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .space-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .space-card:hover .space-image {
+            transform: scale(1.05);
+        }
+        
+        .image-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .image-nav.prev {
+            left: 10px;
+            color: black;
+        }
+        
+        .image-nav.next:hover{
+            color: red;
+        }
+        
+        .image-nav.next {
+            right: 10px;
+            color: black;
+        }
+        .image-nav.prev:hover{
+            color: red;
+        }
+        
+        .space-card:hover .image-nav {
+            opacity: 1;
+        }
+        
+        .space-content-wrapper {
+            padding: 15px;
+        }
+        
+        .space-name {
+            font-size: 1.2em;
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+        
+        .space-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .space-detail svg {
+            margin-right: 5px;
+        }
+        
+        .price-text {
+            color: black;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price-text::after {
+            content: '*';
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            font-size: 1em;
+            color: black;
+        }
+        
+        .space-card:hover .price-text::after {
+            opacity: 1;
+        }
+        
+        .no-results {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+        }
+    }

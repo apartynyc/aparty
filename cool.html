@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee at Bottom</title>
+    <style>
+        .marquee-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: white; /* Optional: Set a background color */
+            z-index: 1000; /* Ensure it appears on top of other content */
+        }
+
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            gap: 1rem; /* Adjust the gap as needed */
+            position: relative;
+            user-select: none;
+        }
+        
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            color: #000;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.2em !important;
+            font-size: 40px;
+            letter-spacing: 2px;
+            min-width: 100%;
+            gap: 1rem; /* Match the gap */
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(calc(-100% - 1rem)); /* Match the gap */
+            }
+        }
+        
+        .scroll {
+            animation: scroll 10s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Your page content goes here -->
+
+    <div class="si-embed marquee-container">
+        <div class="marquee">
+            <div class="marquee-content scroll">
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+            </div>
+            <div class="marquee-content scroll">
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+            </div>
+            <div class="marquee-content scroll">
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+            </div>
+            <div class="marquee-content scroll">
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+            </div>
+            <div class="marquee-content scroll">
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+            </div>
+            <div class="marquee-content scroll">
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+                <div>①a party 03.23.24</div>
+                <div>②fimm 07.24.24</div>
+                <div>③pataguay 07.19.24</div>
+            </div>
+        </div>
+    </div>              
+
+</body>
+</html>

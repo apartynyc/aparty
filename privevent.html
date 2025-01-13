@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fimm 07.24.24</title>
+    <link rel="stylesheet" href="priv.css">
+</head>
+<body>
+    <div id="heading">
+        <h1><a href="../../index.html">a party</a></h1>
+    </div>
+    
+    <div class="galleries-container">
+        <div class="gallery-wrapper">
+            <div class="gallery">
+                <img src="azelimg/girl playing.jpg" alt="Image 1">
+                <img src="azelimg/haruumi close up.jpg" alt="Image 3">
+                <video src="azelimg/haruumi playing.mp4" loop muted></video>
+                <img src="azelimg/haruumi far away.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-text">azelrm album release 04.11.2024</div>
+        </div>
+        
+        <div class="gallery2-wrapper">
+            <div class="gallery2">
+                <img src="gitaneimg/img5.jpeg" alt="Image 5">
+                <img src="azelimg/haruumi far away.jpg" alt="Image 3">
+                <img src="gitaneimg/img7.jpeg" alt="Image 7">
+                <img src="gitaneimg/img8.jpeg" alt="Image 8">
+            </div>
+            <div class="gallery-text">penthouse work party 09.26.24</div>
+        </div>
+    </div>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('.gallery video');
+
+  videos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+      video.play();
+    });
+
+    video.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+});
+   </script>
+        
+</body>
+</html>

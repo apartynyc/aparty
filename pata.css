@@ -1,0 +1,108 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(/AktivGroteskthin.ttf);
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  font-family: myFirstFont, Arial, sans-serif;
+}
+
+*{
+  cursor: default;
+}
+
+#heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  margin: 0;
+  font-weight: 100;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#gallery img, #gallery video {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+#gallery img:hover, #gallery video:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+#gallery video:hover {
+  cursor: pointer;
+}
+
+#scrollable-text {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: white;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.arrow {
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1;
+  font-size: 20px;
+  color: #333;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #333;
+  z-index: -1;
+}
+
+@media (min-width: 554px) {
+  h1 {
+    font-size: 65px;
+  }
+
+  #heading {
+    padding: 1rem 2rem;
+  }
+}

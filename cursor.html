@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asterisk Cursor</title>
+    <style>
+        body, a, button, input[type="submit"], input[type="button"] {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"), auto !important;
+        }
+        body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #cursor {
+            position: fixed;
+            pointer-events: none;
+            font-size: 10px; /* Adjust size as needed */
+            line-height: 1;
+            user-select: none;
+        }
+        /* Example link styles */
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor">*</div>
+    <!-- Example link to demonstrate cursor behavior -->
+    <a href="#" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Hover over me</a>
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('cursor');
+            cursor.style.left = (e.clientX - cursor.offsetWidth / 2) + 'px';
+            cursor.style.top = (e.clientY - cursor.offsetHeight / 2) + 'px';
+        });
+    </script>
+</body>
+</html>

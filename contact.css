@@ -1,0 +1,51 @@
+*{
+    overflow: hidden;
+}
+body {
+    background-color: white;
+    margin: 0;
+    font-family: myFirstFont;
+  }
+  
+  @font-face {
+    font-family: myFirstFont;
+    src: url(/AktivGroteskthin.ttf);
+  }
+  
+#center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 78vh;
+}
+
+#logo {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 65px;
+    margin: 0px;
+    font-weight: 100;
+    font-family: myFirstFont;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  h1 a {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color from h1 */
+  }
+  
+  h1 a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
+  #heading {
+    display: flex;
+    justify-content: start; /* Spreads items (logo and nav) apart */
+    align-items: center;
+    padding: 1rem 2rem;
+  }

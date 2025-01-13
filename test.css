@@ -1,0 +1,102 @@
+#svg-container{
+    top: 100px;
+}
+
+#martintop {
+    top: 49.8%;
+    left: 51.5%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 80px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#martintop:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}
+#martinsub {
+    top: 67.05%;
+    left: 51.5%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 80px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#martinsub:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}
+#qscspeaker {
+    top: 52%;
+    left: 60.5%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 60px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#qscspeaker:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}
+#dubtop {
+    top: 35.05%;
+    left: 41.5%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 100px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#dubtop:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}
+#dubsub {
+    top: 58.05%;
+    left: 41.5%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 100px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#dubsub:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}
+#novaline {
+    top: 22%;
+    left: 31%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 100px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#novaline:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}
+#novasub {
+    top: 60%;
+    left: 31%;
+    position: fixed;
+    z-index: 9999;
+    height: auto;
+    width: 100px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter properties */
+}
+
+#novasub:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2); /* Makes the SVG 20% brighter on hover */
+}

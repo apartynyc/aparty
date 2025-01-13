@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article with Video</title>
+    <link rel="stylesheet" href="navigation.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: myFirstFont;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url(/AktivGroteskthin.ttf);
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            margin-top: 120px; /* Space for navigation */
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Equal width columns */
+            gap: 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            grid-column: 2;
+            margin-top: 20px;
+            font-size: 2.5em;
+            line-height: 1.2;
+        }
+
+        .article-section {
+            padding: 20px 0;
+        }
+
+        .article-content {
+            line-height: 1.6;
+        }
+
+        .article-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content strong {
+            color: #333;
+            font-size: 1.1em;
+            display: block;
+            margin-top: 30px;
+        }
+
+        .article-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .author-credits {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .author-credits .author-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .author-credits .author-bio {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .video-section {
+            position: sticky;
+            top: 140px; /* Navigation height + some padding */
+            height: fit-content;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000; /* Placeholder for video */
+            margin-bottom: 10px;
+        }
+
+        .video-credits {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .video-section {
+                position: relative;
+                top: 0;
+                order: -1; /* Places video above article on mobile */
+            }
+        }
+
+        @media (max-width: 626px) {
+            .content-wrapper {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <div class="content-wrapper">
+        <section class="article-section">
+            <article class="article-content">
+                <p style="font-style: italic;">This is the first installment of interviews to go along with the IN THE UNIT mix series. Written by a music lover who can't DJ or produce to save their life, but loves to listen to those who can, WRITTENINTHEUNIT serves to fill in the blanks that surround mix series' and open up the series to an outsider's perspective.</p>
+
+                <p><strong>How'd you end up in the unit?</strong></p>
+                <p>Yeah, so I was really drunk. And I was stumbling on the street in Bushwick when I saw this British person who looked quite friendly. And they were like, oh, do you want to come into this storage unit? I started running away from them and then they were faster than me because I've got a bad knee, and then they caught up to me and grabbed me, brought me into the unit, and put some headphones on me.</p>
+
+                <p><strong>Wow. A crazy start- was that Brody?</strong></p>
+                <p>Nah, I actually met Joey at MOT - a club in London as I'm sure you know.</p>
+
+                <p><strong>Mot is legendary. How'd you end up there?</strong></p>
+                <p>I used to have a residency, Dusty Dan and Pals series, at Dalston Den which is a club that I still love a lot. Before that though, I used to run a brand called Dalston Dance Society, where it was more focused on Headliners, I'd just open. A lot of people were coming and would ask why I wasn't playing more as they had come to see me. So off the cuff, I put together the beginnings of the Dusty Dan and Pals nights for my friend's birthday.'. And it just went really really really well and we kept selling out Dalston Den. MOT picked up on it and stole me away for a really good price.</p>
+
+                <p><strong>You were in New York recently, you were only here for a week, but what did you take away from your glimpse of the music scene? How'd you spend your time?</strong></p>
+                <p>I wasn't there long so my viewpoint is limited but, from what I saw, I think people use the word community a lot and they're lying. People think 'Oh I'm doing dance music, I'm starting something community based' but you're not. It's just using people to make money off of them. Just because you say the word community, doesn't mean there is any real ethos within the crowd. There are pockets of the scene that are really lovely, like what the kindergarten crew are doing, Ma Sha specifically, really brings people together and helps each other out. And their music is crazy, I'm a big fan of that.</p>
+
+                <p><strong>You brought up the word community, what do you feel the difference in community feeling is in London versus New York?</strong></p>
+                <p>I actually think there's quite a lot of parallels- but I was lucky enough to meet a community in New York. I was there when Ma Sha had a house party which I went to. I think London has a bigger music scene community. I feel like your average clubber in New York, setting aside music heads, is more into being there for the club, and generally less involved in the music they are going to see and there for the experience. Granted that's a snapshot of one week. What's so special about the London scene is that people are doing all these different types of music but everyone's kind of friends. It's more like a nice, big friendship group that you naturally have everywhere you go.</p>
+
+                <p><strong>You're a producer as well as a DJ, and listening back to your mix from the unit, it feels really producer led. Did Djing or Production come first?</strong></p>
+                <p>I DJed way before I produced. I've DJed for about eight years now. A Lot of what I've produced has to do with my Dalston Den residency, and all of my productions are really dance floor-based. I'd play my residency one month, and try to think of the best tune I could play on the dance floor the following month, make it, then grow on that every month. When you play the same spot every month, you can't be playing the same tunes. I mean from an audience's perspective, what's the point of going to see a DJ if they play the same tunes every month, month in month out? I was constantly striving to make something that fused everything I really loved to ultimately get the dance floor moving.</p>
+
+                <!-- Rest of the interview content continues... -->
+                <p><strong>Dance floor fusion. I like that. Do you find yourself reaching for certain genres more than others? Do you think genre really matters?</strong></p>
+                <p>Yeah, I do feel like the genre matters a lot. I'm hyper-specific about what I will play and won't play, at least in my mind. I do have a right-or-wrong in my mind of the sounds I want to play and hear when I play. But it's really hard to pin down, to articulate, what the genre actually is at the moment. It's all so new and exciting and it's not got a name yet. I take a lot of inspiration from London, which is such a melting pot of global sounds. I take percussion from UK hip-hop, dancehall, a lot of Latin, bass influences, mash that into one with grime and techno, and a bit of dubstep as well. But I don't often just play one of those genres, it's all a fusion into one new thing which I'm trying to push forward on my label, Dusty.</p>
+
+                <p><strong>Final question- you talk a lot about community and friendship- how do you feel music communities can continue developing?</strong></p>
+                <p>Smoking area, I find it hard to read personality across texting, and you can't really beat meeting people in real life.</p>
+
+                <p>Follow Dan on IG dustydan___ , and check out his resident advisor for upcoming events.</p>
+                
+                <div class="author-credits">
+                    <div class="author-name">Written by WRITTENINTHEUNIT</div>
+                    <div class="author-bio">A music lover who can't DJ or produce to save their life, but loves to listen to those who can.</div>
+                </div>
+            </article>
+        </section>
+
+        <section class="video-section">
+            <div class="video-container">
+                <!-- Replace with your video embed code -->
+                <img src="/api/placeholder/400/225" alt="Video placeholder">
+            </div>
+            <div class="video-credits" style="font-style: italic;">
+                Video Credits: a party<br>
+                © 2024 a party
+            </div>
+            <h1 class="main-title">WRITTEN IN THE UNIT: Dusty Dan</h1>
+        </section>
+    </div>
+
+    <script src="nav-loader.js"></script>
+</body>
+</html>

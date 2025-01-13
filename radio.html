@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio</title>
+    <link rel="stylesheet" href="navigation.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: myFirstFont;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url(/AktivGroteskthin.ttf);
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Gallery Styles */
+        .gallery-container {
+            margin-top: 120px;
+            padding: 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            /* transform: scale(1.05); */
+            filter: blur(1px);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+
+        .category {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category:hover {
+            background: black;
+            color: white;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 8px;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 626px) {
+            .gallery-container {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Gallery -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item" data-genre="garage">
+                <a href="dustydan.html"><img src="dan cover photo.jpg" alt="Event 1"></a>
+                <div class="overlay">
+                    <span class="category">garage</span>
+                    <div class="title">dusty dan - 11.11.2024</div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <script src="nav-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gallery = document.querySelector('.gallery');
+            const categories = document.querySelectorAll('.category');
+
+            function reorderGallery(selectedGenre) {
+                const items = Array.from(document.querySelectorAll('.gallery-item'));
+                
+                items.sort((a, b) => {
+                    const aGenre = a.dataset.genre;
+                    const bGenre = b.dataset.genre;
+                    
+                    if (aGenre === selectedGenre && bGenre !== selectedGenre) return -1;
+                    if (aGenre !== selectedGenre && bGenre === selectedGenre) return 1;
+                    return 0;
+                });
+
+                items.forEach(item => item.remove());
+
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        gallery.appendChild(item);
+                        item.style.opacity = 0;
+                        requestAnimationFrame(() => {
+                            item.style.transition = 'opacity 0.5s ease';
+                            item.style.opacity = 1;
+                        });
+                    }, index * 50);
+                });
+            }
+
+            categories.forEach(category => {
+                category.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const genre = category.textContent.toLowerCase();
+                    reorderGallery(genre);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

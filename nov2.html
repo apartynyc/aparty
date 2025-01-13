@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.02.2024</title>
+    <link rel="stylesheet" href="nov2.css">
+</head>
+<body>
+    <script src="./cursor.js"></script>
+    <div id="cursor">*</div>
+    <body class="video-playing">
+        <div id="video-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;">
+          <video id="background-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="found.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+      <div id="content">
+        <h1>hi</h1>
+    </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const videoContainer = document.getElementById('video-container');
+    const video = document.getElementById('background-video');
+    const content = document.getElementById('content');
+    const cursor = document.getElementById('cursor');
+
+    function showVideo() {
+        videoContainer.style.display = 'block';
+        content.style.display = 'none';
+        document.body.classList.add('video-playing');
+    }
+
+    function showContent() {
+        videoContainer.style.display = 'none';
+        content.style.display = 'block';
+        document.body.classList.remove('video-playing');
+    }
+
+    function playVideo() {
+        showVideo();
+        video.play().catch(error => {
+            console.error("Video playback failed:", error);
+            showContent();
+        });
+    }
+
+    // Play video on page load
+    playVideo();
+
+    // Switch to content on video end or click
+    video.addEventListener('ended', showContent);
+    document.addEventListener('click', showContent);
+
+    // Move custom cursor
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+});
+      </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Party - Rent Spaces</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="rent-spaces-styles.css">
+</head>
+<body>
+    <div id="heading">
+        <h1><a href="../../index.html">a party</a></h1>
+        <h2>throw a party</h2>
+    </div>
+    <div id="main-content">
+        <div id="root"></div>
+    </div>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "lucide-react": "https://esm.sh/lucide-react@0.263.1"
+      }
+    }
+    </script>
+    
+    <script type="module">
+        import { Search, Users, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+        window.LucideIcons = { Search, Users, Star, ChevronLeft, ChevronRight };
+    </script>
+    
+    <script type="text/babel">
+        const { Search, Users, Star, ChevronLeft, ChevronRight } = window.LucideIcons;
+        
+        const spaces = [
+            { id: 1, name: "urban loft", capacity: 50, price: 150, rating: 4.5, images: ["../spaces/loft1.jpg", "./spaces/loft2.jpg", "urban-loft-3.jpg"] },
+            { id: 2, name: "rustic warehouse", capacity: 100, price: 200, rating: 4.2, images: ["./spaces/warehouse1.jpg", "./spaces/warehouse2.jpg"] },
+            { id: 3, name: "afterhours restraunt", capacity: 75, price: 300, rating: 4.8, images: ["./spaces/restraunt1.jpg", "./spaces/restraunt2.jpeg"] },
+            { id: 4, name: "industrial warehouse", capacity: 60, price: 250, rating: 4.6, images: ["./spaces/warehouse3.jpg", "./spaces/warehouse4.jpg"] },
+        ];
+        
+        const SpaceCard = ({ space }) => {
+            const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+            const nextImage = (e) => {
+                e.stopPropagation();
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % space.images.length);
+            };
+
+            const prevImage = (e) => {
+                e.stopPropagation();
+                setCurrentImageIndex((prevIndex) => (prevIndex - 1 + space.images.length) % space.images.length);
+            };
+
+            return (
+                <div className="space-card">
+                    <div className="image-container">
+                        <img src={space.images[currentImageIndex]} alt={space.name} className="space-image" />
+                        <button className="image-nav prev" onClick={prevImage}><ChevronLeft /></button>
+                        <button className="image-nav next" onClick={nextImage}><ChevronRight /></button>
+                    </div>
+                    <div className="space-content-wrapper">
+                        <div className="space-content">
+                            <h2 className="space-name">{space.name}</h2>
+                            <p className="space-detail"><Users />  {space.capacity}</p>
+                            <p className="space-detail"><Star /> {space.rating.toFixed(1)}</p>
+                        </div>
+                        <span className="price-text">
+                            ${space.price} / day
+                        </span>
+                    </div>
+                </div>
+            );
+        };
+
+        const RentSpacesPage = () => {
+            const [searchTerm, setSearchTerm] = React.useState('');
+            
+            const filteredSpaces = spaces.filter(space =>
+                space.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            
+            return (
+                <div className="container">
+                    <h1></h1>
+                    
+                    <div className="search-container">
+                        <input
+                            type="text"
+                            placeholder="Search spaces..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="search-input"
+                        />
+                        <button className="search-button">
+                             search
+                        </button>
+                    </div>
+                    
+                    <div className="space-grid">
+                        {filteredSpaces.map(space => (
+                            <SpaceCard key={space.id} space={space} />
+                        ))}
+                    </div>
+                    
+                    {filteredSpaces.length === 0 && (
+                        <p className="no-results">No spaces found. Try a different search term.</p>
+                    )}
+                </div>
+            );
+        };
+        
+        ReactDOM.render(<RentSpacesPage />, document.getElementById('root'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* Hide default cursor everywhere */
+html, body, * {
+    cursor: none !important;
+}
+
+/* Custom cursor styles */
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    font-size: 24px; /* Adjust size as needed */
+    line-height: 1;
+    user-select: none;
+    z-index: 10000;
+}
+
+/* Ensure custom cursor works on interactive elements */
+a, button, input[type="submit"], input[type="button"], 
+[role="button"], [tabindex]:not([tabindex="-1"]) {
+    cursor: none !important;
+}
+
+/* Target marquee, its contents, and surrounding areas */
+.marquee-container,
+.marquee-container *,
+.marquee,
+.marquee *,
+.marquee-content,
+.marquee-content *,
+#apa, #fimma, #pata, #gitane,
+#apa *, #fimma *, #pata *, #gitane * {
+    cursor: none !important;
+}
+
+/* Target the area just above the marquee */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 20px; /* Adjust as needed */
+    cursor: none !important;
+    z-index: 9999;
+}
+
+/* Example link styles */
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Ensure custom cursor works in fullscreen mode */
+:fullscreen * {
+    cursor: none !important;
+}
+
+:-webkit-full-screen * {
+    cursor: none !important;
+}
+
+:-moz-full-screen * {
+    cursor: none !important;
+}
+
+/* Additional catch-all for any missed elements */
+[style*="cursor"] {
+    cursor: none !important;
+}

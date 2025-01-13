@@ -1,0 +1,50 @@
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/AktivGroteskthin.ttf);
+}
+*{
+    font-family: myFirstFont;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10001;
+    font-size: 24px;
+    color: white;
+    display: none;
+    transform: translate(-50%, -50%);
+}
+
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.video-playing {
+    cursor: none;
+}
+
+body.video-playing #cursor {
+    display: block;
+}
+
+#content {
+    display: none;
+}
