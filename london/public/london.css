@@ -24,7 +24,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
-  background: white;
+  background: none;
 }  
 
 h1, .nav-link {   
@@ -45,14 +45,13 @@ h1 a:hover, .nav-link:hover {
 
 
 
-iframe {
-  position: fixed;
-  top: 0;
-  left: 0;
+iframe {   
   width: 100%;
-  height: 100%;
+  height: 100vh;
   border: none;
-  z-index: -1;
+  display: block;
+  margin-top: 0;
+  z-index: 1000;
 }  
 
 @media (max-width: 554px) {   
