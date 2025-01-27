@@ -39,16 +39,59 @@
     }
 
     #video-content {
-        display: none;
-        opacity: 0;
-        transition: opacity 1s ease-in;
         width: 100%;
-        height: 100%;
-        max-width: 800px;
+        max-width: 1200px; /* Increased max-width */
         margin: 0 auto;
-        margin-top: 120px;
+        padding: 20px;
     }
     
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 30px;
+        background: #000; /* Added black background */
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 480px; /* Ensures minimum height */
+    }
+    
+    .video-info {
+        margin-top: 30px;
+        max-width: 800px;
+    }
+    
+    .video-title {
+        font-size: 32px; /* Increased font size */
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .video-text {
+        font-size: 18px; /* Increased font size */
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+    
+    .video-link {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    
+    .video-link:hover {
+        color: #666;
+    }
     #video-content.fade-in {
         opacity: 1;
         display: flex;
@@ -62,48 +105,6 @@
         height: auto;
         margin-bottom: 20px;
     }
-    
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-    }
-    
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .video-info {
-        margin-top: 20px;
-    }
-    
-    .video-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    
-    .video-text {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-    
-    .video-link {
-        display: inline-block;
-        text-decoration: none;
-        color: #000;
-        transition: color 0.3s ease;
-    }
-    
-    .video-link:hover {
-        color: #666;
-    }
-
     .marquee-container {
         position: fixed;
         bottom: 0;
