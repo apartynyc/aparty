@@ -42,7 +42,7 @@
         width: 100%;
         max-width: 1200px;
         margin: -20px auto 0; /* Added negative top margin */
-        padding: 0 50px; /* Removed top/bottom padding */
+        padding: 0 20px; /* Removed top/bottom padding */
     }
     
     .video-container {
