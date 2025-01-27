@@ -12,13 +12,13 @@ const Analytics = {
         // Google tag (gtag.js)
         const script = document.createElement('script');
         script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-8GD68E0YGD";
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-86D68E0YGD";
         document.head.appendChild(script);
 
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-8GD68E0YGD');
+        gtag('config', 'G-86D68E0YGD');
     },
 
     getCookie: function(name) {
