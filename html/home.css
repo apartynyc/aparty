@@ -224,19 +224,15 @@
     }
 
     #video-content {
-        display: none;
-        opacity: 0;
-        transition: opacity 1s ease-in;
         width: 100%;
-        height: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        margin-top: 150px;
+        max-width: 1200px;
+        margin: 60px auto 0; /* Increased top margin to prevent cutoff */
+        padding: 0 20px;
     }
     
     .video-container {
         position: relative;
-        padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
         max-width: 100%;
@@ -250,8 +246,37 @@
         left: 0;
         width: 100%;
         height: 100%;
+        min-height: 480px;
     }
     
+    .video-info {
+        margin-top: 20px;
+        max-width: 800px;
+    }
+    
+    .video-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .video-text {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+    
+    .video-link {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    
+    .video-link:hover {
+        color: #666;
+    }
     #video-content.fade-in {
         opacity: 1;
         display: flex;
@@ -266,35 +291,6 @@
         margin-bottom: 20px;
     }
     
-    .video-info {
-        width: 100%;
-        text-align: left;
-        padding: 0;
-        margin-top: 20px;
-    }
-    
-    .video-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    
-    .video-text {
-        font-size: 16px;
-        margin-bottom: 10px;
-        line-height: 1.4;
-    }
-    
-    .video-link {
-        color: inherit;
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 10px;
-    }
-
-    .video-link:hover {
-        text-decoration: underline;
-    }
-
     .marquee-container {
         position: fixed;
         bottom: 0;
