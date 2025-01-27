@@ -40,19 +40,19 @@
 
     #video-content {
         width: 100%;
-        max-width: 1200px; /* Increased max-width */
-        margin: 0 auto;
-        padding: 20px;
+        max-width: 1200px;
+        margin: -20px auto 0; /* Added negative top margin */
+        padding: 0 20px; /* Removed top/bottom padding */
     }
     
     .video-container {
         position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
         max-width: 100%;
         margin-bottom: 30px;
-        background: #000; /* Added black background */
+        background: #000;
     }
     
     .video-container iframe {
@@ -61,22 +61,22 @@
         left: 0;
         width: 100%;
         height: 100%;
-        min-height: 480px; /* Ensures minimum height */
+        min-height: 480px;
     }
     
     .video-info {
-        margin-top: 30px;
+        margin-top: 20px; /* Reduced top margin */
         max-width: 800px;
     }
     
     .video-title {
-        font-size: 32px; /* Increased font size */
+        font-size: 32px;
         margin-bottom: 20px;
         font-weight: bold;
     }
     
     .video-text {
-        font-size: 18px; /* Increased font size */
+        font-size: 18px;
         line-height: 1.6;
         margin-bottom: 25px;
     }
