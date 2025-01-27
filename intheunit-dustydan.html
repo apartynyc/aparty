@@ -27,9 +27,9 @@
         }
 
         .content-wrapper {
-            margin-top: 120px; /* Space for navigation */
+            margin-top: 120px;
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Equal width columns */
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             max-width: 1400px;
             margin-left: auto;
@@ -61,47 +61,27 @@
             margin-bottom: 20px;
         }
 
-        .article-content strong {
-            color: #333;
-            font-size: 1.1em;
-            display: block;
-            margin-top: 30px;
-        }
-
-        .article-content h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-
-        .author-credits {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .author-credits .author-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .author-credits .author-bio {
-            font-size: 0.9em;
-            color: #666;
-            line-height: 1.4;
-        }
-
         .video-section {
             position: sticky;
-            top: 140px; /* Navigation height + some padding */
+            top: 140px;
             height: fit-content;
         }
 
         .video-container {
             width: 100%;
-            aspect-ratio: 16/9;
-            background: #000; /* Placeholder for video */
+            position: relative;
+            padding-bottom: 56.25%;
+            background: #000;
             margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .video-credits {
@@ -119,7 +99,7 @@
             .video-section {
                 position: relative;
                 top: 0;
-                order: -1; /* Places video above article on mobile */
+                order: -1;
             }
         }
 
@@ -175,8 +155,13 @@
 
         <section class="video-section">
             <div class="video-container">
-                <!-- Replace with your video embed code -->
-                <img src="/api/placeholder/400/225" alt="Video placeholder">
+                <iframe
+                    src="https://www.youtube.com/embed/p_RX2fMdIsk"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </div>
             <div class="video-credits" style="font-style: italic;">
                 Video Credits: a party<br>
