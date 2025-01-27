@@ -857,20 +857,7 @@
     const videoContent = document.getElementById('video-content');
     
     // Add fade-out class to logo after 1.5 seconds
-    setTimeout(function() {
-        logo.classList.add('fade-out');
-        
-        // After logo fades out (1.5s), show video content
-        setTimeout(function() {
-            logo.style.display = 'none';
-            videoContent.style.display = 'block';
-            
-            // Trigger fade in for video content
-            setTimeout(function() {
-                videoContent.classList.add('fade-in');
-            }, 100);
-        }, 1500);
-    }, 1500);
+   
 });
 document.addEventListener('DOMContentLoaded', function() {
                 // Core elements
