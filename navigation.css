@@ -81,6 +81,9 @@ h1 a {
     text-decoration: none;
     color: black;
 }
+h1 a:hover {
+    color: rgb(176, 0, 0);
+}
 
 .nav-menu-group {
     display: flex;

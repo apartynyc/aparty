@@ -1,71 +1,75 @@
 @font-face {
-    font-family: myFirstFont;
-    src: url(/AktivGroteskthin.ttf);
+  font-family: myFirstFont;
+  src: url(/AktivGroteskthin.ttf);
+}
+
+* {
+  font-family: myFirstFont;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 10px 10px;
+}
+.nav-link {
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+  text-decoration: none;
+  margin: 0;
+  margin-right: 20px; /* Adds space to the right of each link */
+  font-size: 30px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+
+.bottom-left-content {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.bottom-left-content h2 {
+  font-size: 20px;  
+  margin-bottom: 8px;
+}
+
+.bottom-left-content p {
+  font-size: 10px;  
+  margin: 0;
+  max-width: 300px;  
+}
+
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: -1;
+}
+
+@media screen and (max-width: 554px) {
+  .bottom-left-content {
+    display: none;
   }
   
-  * {
-    font-family: myFirstFont;
+  .nav-link {
+    justify-content: center;
   }
-  
-  body {
-    background-color: white;
-    margin: 0;
-  }
-  
-  #heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.45rem 1rem;
-    z-index: 9999;
-  }
-  
-  h1, .nav-link {
-    color: rgb(0, 0, 0);
-    font-weight: 100;
-    text-decoration: none;
-    margin: 0;
-  }
-  
-  h1 a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  h1 a:hover, .nav-link:hover {
-    text-decoration: underline;
-  }
-  
-  iframe {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: -1;
-  }
-  
-  @media (max-width: 554px) {
-    .nav-link {
-      font-size: 15px;
-      margin: 5px;
-    }
-    
-    #heading {
-      padding: 0rem 1rem;
-      font-size: 15px;
-    }
-  }
-  
-  @media (min-width: 554px) {
-    .nav-link {
-      font-size: 30px;
-      margin: 10px;
-    }
-    
-    #heading {
-      padding: 1rem 2rem;
-      font-size: 32.5px;
-    }
-  }
+
+}
