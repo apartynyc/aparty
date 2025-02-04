@@ -1,7 +1,9 @@
+/* Mobile Styles */
 @media (min-width: 1px), (max-width: 626px) {
     * {
         cursor: none;
         font-family: myFirstFont;
+        overflow: hidden;
     }
 
     body {
@@ -27,7 +29,14 @@
         align-items: center;
         justify-content: center;
         opacity: 1;
-        transition: opacity 1.5s ease-out;
+        visibility: visible;
+        transition: opacity 1.5s ease-out, visibility 0s linear;
+    }
+    
+    #logo.fade-out {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1.5s ease-out, visibility 0s linear 1.5s;
     }
     
     #logo svg {
@@ -39,10 +48,14 @@
     }
 
     #video-content {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
+        transition: opacity 1s ease-in, visibility 0s linear 1s;
     }
     
     .video-container {
@@ -94,10 +107,12 @@
 
     #video-content.fade-in {
         opacity: 1;
+        visibility: visible;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        transition: opacity 1s ease-in, visibility 0s linear;
     }
     
     #preview-video {
@@ -136,19 +151,6 @@
         min-width: 100%;
         gap: .5rem;
     }
-    
-    @keyframes scroll {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(calc(-100% - .5rem));
-        }
-    }
-    
-    .scroll {
-        animation: scroll 10s linear infinite;
-    }
 
     #video-container {
         position: fixed;
@@ -174,6 +176,7 @@
     }
 }
 
+/* Desktop Styles */
 @media (min-width: 627px) {
     * {
         font-family: myFirstFont;
@@ -193,6 +196,7 @@
     }
     
     #video-content {
+        display: none;
         opacity: 0;
         visibility: hidden;
         transition: opacity 1s ease-in, visibility 0s linear 1s;
@@ -224,14 +228,12 @@
     }
 
     #video-content {
-        display: none;
-        opacity: 0;
-        transition: opacity 1s ease-in;
         width: 100%;
         height: 100%;
         max-width: 800px;
         margin: 0 auto;
         margin-top: 150px;
+        transition: opacity 1s ease-in;
     }
     
     .video-container {
@@ -326,19 +328,6 @@
         gap: .5rem;
     }
 
-    @keyframes scroll {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(calc(-100% - .5rem));
-        }
-    }
-    
-    .scroll {
-        animation: scroll 10s linear infinite;
-    }
-
     #video-container {
         position: fixed;
         top: 0;
@@ -363,6 +352,21 @@
     }
 }
 
+/* Animations */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - .5rem));
+    }
+}
+
+.scroll {
+    animation: scroll 10s linear infinite;
+}
+
+/* Font Faces */
 @font-face {
     font-family: nimbus-big;
     src: url(/nimbus/NimbusRomNo9L-Med.otf);

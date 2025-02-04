@@ -338,7 +338,7 @@
               <div class="video-info">
                   <h2 class="video-title">WRITTEN IN THE UNIT: Dusty Dan</h2>
                   <p class="video-text">This is the first installment of interviews to go along with the IN THE UNIT mix series. Written by a music lover who can't DJ or produce to save their life, but loves to listen to those who can, WRITTENINTHEUNIT serves to fill in the blanks that surround mix series' and open up the series to an outsider's perspective.</p>
-                  <a href="dustydan.html" class="video-link">→ visit page</a>
+                  <a href="intheunit-dustydan.html" class="video-link">→ visit page</a>
               </div>
           </div>
     
@@ -845,7 +845,7 @@
             </div>
          </div>
         </div>
-      </div>
+      
       <script src="nav-loader.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNBR5E77J5"></script>
@@ -857,190 +857,230 @@
   gtag('config', 'G-TNBR5E77J5');
 </script>
          <script>
-          document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
+    // Core elements
     const logo = document.getElementById('logo');
     const videoContent = document.getElementById('video-content');
-    
-    // Add fade-out class to logo after 1.5 seconds
+    const videoContainer = document.getElementById('video-container');
+    const video = document.getElementById('background-video');
+    const websiteContent = document.getElementById('content');
+    const cursor = document.getElementById('cursor');
+    const centerWrapper = document.getElementById('center-wrapper');
+
+    // Session storage and page tracking
+    const currentPage = window.location.pathname;
+    const lastPage = sessionStorage.getItem('lastPage');
+    const videoPlayed = sessionStorage.getItem('videoPlayed');
+    const internalNavigation = sessionStorage.getItem('internalNavigation') === 'true';
+
+    // Video sources and tracking
+    const videoSources = [
+        'found.mp4',
+        'video2.mp4',
+        'video3.mp4'
+    ];
+    let currentVideoIndex = 0;
+    let playCount = 0;
+
+    // Initial content transition
     setTimeout(function() {
         logo.classList.add('fade-out');
         
-        // After logo fades out (1.5s), show video content
         setTimeout(function() {
-            logo.style.display = 'none';
+            // Set display to block but keep it invisible
             videoContent.style.display = 'block';
             
-            // Trigger fade in for video content
             setTimeout(function() {
                 videoContent.classList.add('fade-in');
-            }, 100);
-        }, 1500);
+            }, 50);
+            
+            setTimeout(function() {
+                logo.style.display = 'none';
+            }, 1000);
+        }, 1400);
     }, 3000);
-});
-document.addEventListener('DOMContentLoaded', function() {
-                // Core elements
-                var videoContainer = document.getElementById('video-container');
-                var video = document.getElementById('background-video');
-                var websiteContent = document.getElementById('content');
-                var cursor = document.getElementById('cursor');
-                var centerWrapper = document.getElementById('center-wrapper');
-                var logo = document.getElementById('logo');
 
-                // Session storage and page tracking
-                var currentPage = window.location.pathname;
-                var lastPage = sessionStorage.getItem('lastPage');
-                var videoPlayed = sessionStorage.getItem('videoPlayed');
-                var internalNavigation = sessionStorage.getItem('internalNavigation') === 'true';
+    // Cursor management functions
+    function setWhiteCursor() {
+        if (cursor) {
+            cursor.style.color = 'white';
+        }
+        document.body.style.cursor = 'none';
+    }
 
-                // Video sources and tracking
-                const videoSources = [
-                    'found.mp4',
-                    'video2.mp4',
-                    'video3.mp4'
-                ];
-                let currentVideoIndex = 0;
-                let playCount = 0;
+    function setBlackCursor() {
+        if (cursor) {
+            cursor.style.color = 'black';
+        }
+        document.body.style.cursor = 'auto';
+    }
 
-                // Cursor management functions
-                function setWhiteCursor() {
-                    if (cursor) {
-                        cursor.style.color = 'white';
-                    }
-                    document.body.style.cursor = 'none';
-                }
-
-                function setBlackCursor() {
-                    if (cursor) {
-                        cursor.style.color = 'black';
-                    }
-                    document.body.style.cursor = 'auto';
-                }
-
-                // Video playback functions
-                function playVideo() {
-                    console.log("Playing video");
-                    videoContainer.style.display = 'block';
-                    websiteContent.style.display = 'none';
-                    document.body.classList.add('video-playing');
-                    setWhiteCursor();
-                    
-                    video.muted = false;
-                    var playPromise = video.play();
-                    
-                    if (playPromise !== undefined) {
-                        playPromise.then(_ => {
-                            console.log("Video playing successfully with sound");
-                        }).catch(error => {
-                            console.error("Unmuted playback failed, trying muted:", error);
-                            video.muted = true;
-                            video.play().then(_ => {
-                                console.log("Video playing muted");
-                                addUnmuteButton();
-                            }).catch(innerError => {
-                                console.error("Muted playback also failed:", innerError);
-                                showWebsite();
-                            });
-                        });
-                    }
-                }
-
-                function addUnmuteButton() {
-                    var unmuteButton = document.createElement('button');
-                    unmuteButton.textContent = 'Tap for Sound';
-                    unmuteButton.style.position = 'fixed';
-                    unmuteButton.style.zIndex = '10000';
-                    unmuteButton.style.bottom = '20px';
-                    unmuteButton.style.left = '50%';
-                    unmuteButton.style.transform = 'translateX(-50%)';
-                    unmuteButton.style.padding = '10px 20px';
-                    unmuteButton.style.backgroundColor = 'rgba(0,0,0,0.5)';
-                    unmuteButton.style.color = 'white';
-                    unmuteButton.style.border = 'none';
-                    unmuteButton.style.borderRadius = '5px';
-                    unmuteButton.addEventListener('click', function() {
-                        video.muted = false;
-                        video.play().then(() => {
-                            console.log("Video unmuted and playing");
-                            this.remove();
-                        }).catch(error => {
-                            console.error("Failed to unmute:", error);
-                        });
-                    });
-                    document.body.appendChild(unmuteButton);
-                }
-
-                function showWebsite() {
-                    console.log("Showing website content");
-                    videoContainer.style.display = 'none';
-                    websiteContent.style.display = 'block';
-                    document.body.classList.remove('video-playing');
-                    setBlackCursor();
-                    video.pause();
-                }
-
-                // Page and navigation functions
-                function isHomePage() {
-                    return currentPage === '/' || currentPage === '/index.html';
-                }
-
-                function shouldPlayVideo() {
-                    return isHomePage() && !internalNavigation && (
-                        !videoPlayed || 
-                        (lastPage === currentPage && isHomePage())
-                    );
-                }
-
-                // Video sequence handling
-                video.addEventListener('ended', function() {
-                    playCount++;
-                    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-                    
-                    if (playCount >= 3) {
-                        playCount = 0;
-                        currentVideoIndex = 0;
-                    }
-                    
-                    video.src = videoSources[currentVideoIndex];
-                    video.play().catch(error => {
-                        console.error("Error playing next video:", error);
-                    });
-                });
-
-                // Initialize page
-                if (shouldPlayVideo()) {
-                    playVideo();
-                    var showWebsiteHandler = function() {
-                        showWebsite();
-                        sessionStorage.setItem('videoPlayed', 'true');
-                        document.removeEventListener('click', showWebsiteHandler);
-                        document.removeEventListener('touchend', showWebsiteHandler);
-                    };
-                    document.addEventListener('click', showWebsiteHandler);
-                    document.addEventListener('touchend', showWebsiteHandler);
-                } else {
+    // Video playback functions
+    function playVideo() {
+        console.log("Playing video");
+        videoContainer.style.display = 'block';
+        websiteContent.style.display = 'none';
+        document.body.classList.add('video-playing');
+        setWhiteCursor();
+        
+        video.muted = false;
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                console.log("Video playing successfully with sound");
+            }).catch(error => {
+                console.error("Unmuted playback failed, trying muted:", error);
+                video.muted = true;
+                video.play().then(_ => {
+                    console.log("Video playing muted");
+                    addUnmuteButton();
+                }).catch(innerError => {
+                    console.error("Muted playback also failed:", innerError);
                     showWebsite();
-                }
-
-                // Reset internal navigation flag
-                sessionStorage.setItem('internalNavigation', 'false');
-
-                // Update last page visited
-                sessionStorage.setItem('lastPage', currentPage);
-
-                // Handle internal navigation
-                document.querySelectorAll('a').forEach(function(link) {
-                    link.addEventListener('click', function(event) {
-                        if (link.hostname === window.location.hostname) {
-                            sessionStorage.setItem('videoPlayed', 'true');
-                            sessionStorage.setItem('internalNavigation', 'true');
-                        }
-                    });
                 });
-
-                // Ensure cursor color is set correctly when video plays or ends
-                video.addEventListener('play', setWhiteCursor);
-                video.addEventListener('ended', setBlackCursor);
             });
+        }
+    }
+
+    function addUnmuteButton() {
+        const unmuteButton = document.createElement('button');
+        unmuteButton.textContent = 'Tap for Sound';
+        unmuteButton.style.position = 'fixed';
+        unmuteButton.style.zIndex = '10000';
+        unmuteButton.style.bottom = '20px';
+        unmuteButton.style.left = '50%';
+        unmuteButton.style.transform = 'translateX(-50%)';
+        unmuteButton.style.padding = '10px 20px';
+        unmuteButton.style.backgroundColor = 'rgba(0,0,0,0.5)';
+        unmuteButton.style.color = 'white';
+        unmuteButton.style.border = 'none';
+        unmuteButton.style.borderRadius = '5px';
+        unmuteButton.addEventListener('click', function() {
+            video.muted = false;
+            video.play().then(() => {
+                console.log("Video unmuted and playing");
+                this.remove();
+            }).catch(error => {
+                console.error("Failed to unmute:", error);
+            });
+        });
+        document.body.appendChild(unmuteButton);
+    }
+
+    function showWebsite() {
+        console.log("Showing website content");
+        videoContainer.style.display = 'none';
+        websiteContent.style.display = 'block';
+        document.body.classList.remove('video-playing');
+        setBlackCursor();
+        video.pause();
+    }
+
+    // Page and navigation functions
+    function isHomePage() {
+        return currentPage === '/' || currentPage === '/index.html';
+    }
+
+    function shouldPlayVideo() {
+        return isHomePage() && !internalNavigation && (
+            !videoPlayed || 
+            (lastPage === currentPage && isHomePage())
+        );
+    }
+
+    // Video sequence handling
+    video.addEventListener('ended', function() {
+        playCount++;
+        currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+        
+        if (playCount >= 3) {
+            playCount = 0;
+            currentVideoIndex = 0;
+        }
+        
+        video.src = videoSources[currentVideoIndex];
+        video.play().catch(error => {
+            console.error("Error playing next video:", error);
+        });
+    });
+
+    // Initialize page
+    if (shouldPlayVideo()) {
+        playVideo();
+        const showWebsiteHandler = function() {
+            showWebsite();
+            sessionStorage.setItem('videoPlayed', 'true');
+            document.removeEventListener('click', showWebsiteHandler);
+            document.removeEventListener('touchend', showWebsiteHandler);
+        };
+        document.addEventListener('click', showWebsiteHandler);
+        document.addEventListener('touchend', showWebsiteHandler);
+    } else {
+        showWebsite();
+    }
+
+    // Reset internal navigation flag
+    sessionStorage.setItem('internalNavigation', 'false');
+
+    // Update last page visited
+    sessionStorage.setItem('lastPage', currentPage);
+
+    // Handle internal navigation
+    document.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            if (link.hostname === window.location.hostname) {
+                sessionStorage.setItem('videoPlayed', 'true');
+                sessionStorage.setItem('internalNavigation', 'true');
+            }
+        });
+    });
+
+    // Cursor movement tracking
+    document.addEventListener('mousemove', function(e) {
+        if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    });
+
+    // Ensure cursor color is set correctly when video plays or ends
+    video.addEventListener('play', setWhiteCursor);
+    video.addEventListener('ended', setBlackCursor);
+
+    // Handle window resize events
+    window.addEventListener('resize', function() {
+        if (videoContainer.style.display === 'block') {
+            video.style.height = window.innerHeight + 'px';
+        }
+    });
+
+    // Optional: Add touch event handling for mobile devices
+    document.addEventListener('touchmove', function(e) {
+        if (cursor) {
+            const touch = e.touches[0];
+            cursor.style.left = touch.clientX + 'px';
+            cursor.style.top = touch.clientY + 'px';
+        }
+    });
+
+    // Handle video loading errors
+    video.addEventListener('error', function(e) {
+        console.error('Error loading video:', e);
+        showWebsite();
+    });
+
+    // Pause video when page is not visible
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            video.pause();
+        } else if (videoContainer.style.display === 'block') {
+            video.play().catch(error => {
+                console.error("Error resuming video:", error);
+            });
+        }
+    });
+});
       </script>
 
     </body>
