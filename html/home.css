@@ -33,7 +33,7 @@
         visibility: visible;
         transition: opacity 1.5s ease-out, visibility 0s linear;
         position: absolute;
-        top: 25%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
