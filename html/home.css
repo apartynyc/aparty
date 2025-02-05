@@ -24,14 +24,17 @@
     }
     
     #logo {
-        width: 80%;
-        height: auto;
+        width: 450px;
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: 1;
         visibility: visible;
         transition: opacity 1.5s ease-out, visibility 0s linear;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     #logo.fade-out {
@@ -60,7 +63,7 @@
     
     .video-container {
         position: relative;
-        padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
         max-width: 100%;
@@ -220,13 +223,17 @@
     }
 
     #logo {
-        width: 500px;
+        width: 800px;
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: 1;
         visibility: visible;
         transition: opacity 1.5s ease-out, visibility 0s linear;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     #logo img {
@@ -237,7 +244,7 @@
 
     .video-container {
         position: relative;
-        padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
         max-width: 100%;
