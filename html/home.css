@@ -3,6 +3,7 @@
     * {
         cursor: none;
         font-family: myFirstFont;
+        overflow: hidden;
     }
 
     body {
@@ -87,13 +88,13 @@
     }
     
     .video-title {
-        font-size: 32px;
+        font-size: 24px;
         margin-bottom: 20px;
         font-weight: bold;
     }
     
     .video-text {
-        font-size: 18px;
+        font-size: 14px;
         line-height: 1.6;
         margin-bottom: 25px;
     }
